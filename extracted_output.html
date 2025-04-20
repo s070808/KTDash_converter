@@ -11,9 +11,7 @@
   <div>
    <div>
     <h5>
-     <p>
-      Loading
-     </p>
+     Loading
     </h5>
    </div>
    <div>
@@ -34,8 +32,6 @@
    <div>
     <h5>
     </h5>
-    <button>
-    </button>
    </div>
    <div>
     <p>
@@ -86,12 +82,8 @@
     <h5>
      <i>
      </i>
-     <p>
-      Share Roster
-     </p>
+     Share Roster
     </h5>
-    <button>
-    </button>
    </div>
    <div>
     <p>
@@ -152,12 +144,8 @@
     <h5>
      <i>
      </i>
-     <p>
-      Share Roster Gallery
-     </p>
+     Share Roster Gallery
     </h5>
-    <button>
-    </button>
    </div>
    <div>
     <p>
@@ -190,20 +178,13 @@
     <h5>
      <i>
      </i>
-     <p>
-      New Roster
-     </p>
+     New Roster
     </h5>
-    <button>
-    </button>
    </div>
    <div>
     <h4>
-     <p>
-      Roster Name
-     </p>
+     Roster Name
     </h4>
-    <input/>
     <p>
      ngIf: newroster.rostername.toLowerCase().includes('angle')
     </p>
@@ -214,9 +195,7 @@
      ngIf: newroster.rostername.toLowerCase().includes('kinbrand')
     </p>
     <h4>
-     <p>
-      Faction
-     </p>
+     Faction
     </h4>
     <select>
      <option>
@@ -226,9 +205,7 @@
      </p>
     </select>
     <h4>
-     <p>
-      KillTeam
-     </p>
+     KillTeam
     </h4>
     <select>
      <option>
@@ -239,16 +216,6 @@
     </select>
    </div>
    <div>
-    <button>
-     <p>
-      Cancel
-     </p>
-    </button>
-    <button>
-     <p>
-      Create Roster
-     </p>
-    </button>
    </div>
   </div>
   <div>
@@ -257,23 +224,15 @@
      <i>
      </i>
     </h5>
-    <button>
-    </button>
    </div>
    <div>
     <h4>
-     <p>
-      Roster Name
-     </p>
+     Roster Name
     </h4>
-    <input/>
     <br/>
     <h4>
-     <p>
-      Notes
-     </p>
+     Notes
     </h4>
-    <textarea></textarea>
     <br/>
     <br/>
     <p>
@@ -281,35 +240,21 @@
     </p>
     <div>
      <h4>
-      <p>
-       Keyword
-      </p>
+      Keyword
      </h4>
      <em>
      </em>
      <br/>
-     <input/>
      <br/>
     </div>
     <p>
      end ngIf: getRosterCustomkeyword(rostertoedit) != ''
     </p>
-    <input/>
     <p>
      Copy portraits when imported by other users
     </p>
    </div>
    <div>
-    <button>
-     <p>
-      Cancel
-     </p>
-    </button>
-    <button>
-     <p>
-      Save
-     </p>
-    </button>
    </div>
   </div>
   <div>
@@ -317,18 +262,12 @@
     <h5>
      <i>
      </i>
-     <p>
-      - Narrative Info
-     </p>
+     - Narrative Info
     </h5>
-    <button>
-    </button>
    </div>
    <div>
     <h4>
-     <p>
-      Requisition Points
-     </p>
+     Requisition Points
     </h4>
     <p>
      ngIf: rostertoedit.userid == currentuser.userid
@@ -339,35 +278,16 @@
      ngIf: rostertoedit.userid == currentuser.userid
     </p>
     <h4>
-     <p>
-      Strategic Assets
-     </p>
+     Strategic Assets
     </h4>
-    <textarea></textarea>
     <h4>
-     <p>
-      Equipment Notes
-     </p>
+     Equipment Notes
     </h4>
-    <textarea></textarea>
     <h4>
-     <p>
-      SpecOps Notes
-     </p>
+     SpecOps Notes
     </h4>
-    <textarea></textarea>
    </div>
    <div>
-    <button>
-     <p>
-      Cancel
-     </p>
-    </button>
-    <button>
-     <p>
-      Save
-     </p>
-    </button>
    </div>
   </div>
   <div>
@@ -375,12 +295,8 @@
     <h5>
      <i>
      </i>
-     <p>
-      Delete Roster
-     </p>
+     Delete Roster
     </h5>
-    <button>
-    </button>
    </div>
    <div>
     <p>
@@ -388,16 +304,6 @@
     </p>
    </div>
    <div>
-    <button>
-     <p>
-      Cancel
-     </p>
-    </button>
-    <button>
-     <p>
-      Delete
-     </p>
-    </button>
    </div>
   </div>
   <div>
@@ -405,12 +311,8 @@
     <h5>
      <i>
      </i>
-     <p>
-      Add Operative to
-     </p>
+     Add Operative to
     </h5>
-    <button>
-    </button>
    </div>
    <div>
     <p>
@@ -420,9 +322,7 @@
      ngIf: addop.killteam.fireteams.length &gt; 1
     </p>
     <h6>
-     <p>
-      Operative
-     </p>
+     Operative
     </h6>
     <select>
      <option>
@@ -432,9 +332,7 @@
      </p>
     </select>
     <h6>
-     <p>
-      Operative Name
-     </p>
+     Operative Name
     </h6>
     <p>
      ngIf: settings['useoptypeasname'] == 'n'
@@ -448,7 +346,6 @@
      end ngIf: settings['useoptypeasname'] == 'n'
     </p>
     <br/>
-    <input/>
     <br/>
     <p>
      Characteristics/Stats
@@ -458,16 +355,6 @@
     </p>
    </div>
    <div>
-    <button>
-     <p>
-      Cancel
-     </p>
-    </button>
-    <button>
-     <p>
-      Add to Team
-     </p>
-    </button>
    </div>
   </div>
   <div>
@@ -478,15 +365,11 @@
       </i>
      </h5>
     </div>
-    <button>
-    </button>
     <br/>
    </div>
    <div>
     <h6>
-     <p>
-      Operative Name
-     </p>
+     Operative Name
     </h6>
     <p>
      ngIf: settings['useoptypeasname'] == 'n'
@@ -500,7 +383,6 @@
      end ngIf: settings['useoptypeasname'] == 'n'
     </p>
     <br/>
-    <input/>
     <br/>
     <p>
      Weapons List
@@ -516,20 +398,14 @@
      ngIf: settings['shownarrative'] == 'y' &amp;&amp; tempeditop.specialisms != ''
     </p>
     <h6>
-     <p>
-      ngIf: tempeditop.edition == 'kt21'
-     </p>
-     <p>
-      ngIf: tempeditop.edition != 'kt21'
-     </p>
+     ngIf: tempeditop.edition == 'kt21'
+     ngIf: tempeditop.edition != 'kt21'
      <span>
       <p>
        Options
       </p>
      </span>
-     <p>
-      end ngIf: tempeditop.edition != 'kt21'
-     </p>
+     end ngIf: tempeditop.edition != 'kt21'
     </h6>
     <div>
      <p>
@@ -541,27 +417,13 @@
     </div>
    </div>
    <div>
-    <button>
-     <p>
-      Cancel
-     </p>
-    </button>
-    <button>
-     <p>
-      Save
-     </p>
-    </button>
    </div>
   </div>
   <div>
    <div>
     <h5>
-     <p>
-      's Equipment
-     </p>
+     's Equipment
     </h5>
-    <button>
-    </button>
    </div>
    <div>
     <p>
@@ -572,16 +434,6 @@
     </p>
    </div>
    <div>
-    <button>
-     <p>
-      Cancel
-     </p>
-    </button>
-    <button>
-     <p>
-      Save
-     </p>
-    </button>
    </div>
   </div>
   <div>
@@ -589,12 +441,8 @@
     <h5>
      <i>
      </i>
-     <p>
-      Delete Operative
-     </p>
+     Delete Operative
     </h5>
-    <button>
-    </button>
    </div>
    <div>
     <p>
@@ -602,16 +450,6 @@
     </p>
    </div>
    <div>
-    <button>
-     <p>
-      Cancel
-     </p>
-    </button>
-    <button>
-     <p>
-      Delete
-     </p>
-    </button>
    </div>
   </div>
   <div>
@@ -619,12 +457,8 @@
     <h5>
      <i>
      </i>
-     <p>
-      Select Opponent Roster
-     </p>
+     Select Opponent Roster
     </h5>
-    <button>
-    </button>
    </div>
    <div>
     <div>
@@ -635,9 +469,7 @@
      </div>
      <div>
       <h1>
-       <p>
-        JdKdf73l
-       </p>
+       JdKdf73l
       </h1>
      </div>
     </div>
@@ -648,21 +480,10 @@
       </p>
      </div>
      <div>
-      <input/>
      </div>
     </div>
    </div>
    <div>
-    <button>
-     <p>
-      Cancel
-     </p>
-    </button>
-    <button>
-     <p>
-      Confirm
-     </p>
-    </button>
    </div>
   </div>
   <div>
@@ -670,12 +491,8 @@
     <h5>
      <i>
      </i>
-     <p>
-      Brotherhood of Psykers
-     </p>
+     Brotherhood of Psykers
     </h5>
-    <button>
-    </button>
    </div>
    <div>
     <p>
@@ -691,8 +508,6 @@
      <i>
      </i>
     </h5>
-    <button>
-    </button>
    </div>
    <div>
     <div>
@@ -700,11 +515,8 @@
     </div>
     <br/>
     <h4>
-     <p>
-      Upload New Portrait
-     </p>
+     Upload New Portrait
     </h4>
-    <input/>
     <br/>
     <em>
      <p>
@@ -720,9 +532,7 @@
      Please don't upload inappropriate photos. I look at every uploaded portrait and will delete suggestive, inappropriate, or offensive photos.
     </p>
     <h4>
-     <p>
-      Help
-     </p>
+     Help
     </h4>
     <div>
      <div>
@@ -737,21 +547,6 @@
     </div>
    </div>
    <div>
-    <button>
-     <p>
-      Cancel
-     </p>
-    </button>
-    <button>
-     <p>
-      Delete Custom Portrait
-     </p>
-    </button>
-    <button>
-     <p>
-      Save
-     </p>
-    </button>
    </div>
   </div>
   <div>
@@ -760,14 +555,11 @@
      <i>
      </i>
     </h5>
-    <button>
-    </button>
    </div>
    <div>
     <div>
      <img/>
     </div>
-    <input/>
     <br/>
     <em>
      <p>
@@ -783,9 +575,7 @@
      Please don't upload inappropriate photos. I look at every uploaded portrait and will delete suggestive, inappropriate, or offensive photos.
     </p>
     <h4>
-     <p>
-      Help
-     </p>
+     Help
     </h4>
     <div>
      <div>
@@ -800,21 +590,6 @@
     </div>
    </div>
    <div>
-    <button>
-     <p>
-      Cancel
-     </p>
-    </button>
-    <button>
-     <p>
-      Delete Custom Portrait
-     </p>
-    </button>
-    <button>
-     <p>
-      Save
-     </p>
-    </button>
    </div>
   </div>
   <div>
@@ -825,8 +600,6 @@
       </i>
      </sup>
     </h5>
-    <button>
-    </button>
    </div>
    <div>
     <p>
@@ -873,18 +646,14 @@
      </p>
      <div>
       <h2>
-       <p>
-        Strategic Ploys
-       </p>
+       Strategic Ploys
       </h2>
       <p>
        ngRepeat: ploy in myRoster.killteam.ploys.strat
       </p>
       <hr/>
       <h2>
-       <p>
-        Tactical Ploys
-       </p>
+       Tactical Ploys
       </h2>
       <p>
        ngRepeat: ploy in myRoster.killteam.ploys.tac
@@ -903,18 +672,14 @@
   </div>
   <div>
    <h2>
-    <p>
-     Strategic Ploys
-    </p>
+    Strategic Ploys
    </h2>
    <p>
     ngRepeat: ploy in myRoster.killteam.ploys.strat
    </p>
    <hr/>
    <h2>
-    <p>
-     Tactical Ploys
-    </p>
+    Tactical Ploys
    </h2>
    <p>
     ngRepeat: ploy in myRoster.killteam.ploys.tac
@@ -923,18 +688,12 @@
   <div>
    <div>
     <h5>
-     <p>
-      Print Roster
-     </p>
+     Print Roster
     </h5>
-    <button>
-    </button>
    </div>
    <div>
     <h2>
-     <p>
-      Print Mode
-     </p>
+     Print Mode
     </h2>
     <ul>
      <li>
@@ -983,14 +742,12 @@
       </a>
      </li>
     </ul>
-    <input/>
     <label>
      <p>
       Print Ploys
      </p>
     </label>
     <br/>
-    <input/>
     <label>
      <p>
       Print Equipments
@@ -998,11 +755,6 @@
     </label>
    </div>
    <div>
-    <button>
-     <p>
-      Close
-     </p>
-    </button>
    </div>
   </div>
   <a>
@@ -1038,12 +790,8 @@
   <div>
    <div>
     <h5>
-     <p>
-      Install KTDash
-     </p>
+     Install KTDash
     </h5>
-    <button>
-    </button>
    </div>
    <div>
     <p>
@@ -1053,16 +801,6 @@
     </p>
    </div>
    <div>
-    <button>
-     <p>
-      Cancel
-     </p>
-    </button>
-    <button>
-     <p>
-      Install
-     </p>
-    </button>
    </div>
   </div>
   <div>
@@ -1070,9 +808,7 @@
     Killteam Composition
    </p>
    <h1>
-    <p>
-     Kill Team Composition
-    </p>
+    Kill Team Composition
     <sup>
      <i>
      </i>
@@ -1084,9 +820,7 @@
     </p>
     <div>
      <h3>
-      <p>
-       Grey Knights
-      </p>
+      Grey Knights
       <sup>
        <i>
        </i>
@@ -1110,9 +844,7 @@
          </p>
          <div>
           <h2>
-           <p>
-            Brotherhood Librarian
-           </p>
+           Brotherhood Librarian
           </h2>
           <p>
            Specialisms
@@ -1176,12 +908,8 @@
            </p>
            <div>
             <h3>
-             <p>
-              ngIf: operative.edition == 'kt21'
-             </p>
-             <p>
-              ngIf: operative.edition == 'kt24'
-             </p>
+             ngIf: operative.edition == 'kt21'
+             ngIf: operative.edition == 'kt24'
              <div>
               <p>
                Card View
@@ -1272,9 +1000,7 @@
                ngIf: settings['display'] == 'list'
               </p>
              </div>
-             <p>
-              end ngIf: operative.edition == 'kt24'
-             </p>
+             end ngIf: operative.edition == 'kt24'
             </h3>
            </div>
           </div>
@@ -1290,30 +1016,22 @@
              <tr>
               <td>
                <h6>
-                <p>
-                 Weapons
-                </p>
+                Weapons
                </h6>
               </td>
               <td>
                <h6>
-                <p>
-                 ATK
-                </p>
+                ATK
                </h6>
               </td>
               <td>
                <h6>
-                <p>
-                 HIT
-                </p>
+                HIT
                </h6>
               </td>
               <td>
                <h6>
-                <p>
-                 DMG
-                </p>
+                DMG
                </h6>
               </td>
              </tr>
@@ -1335,16 +1053,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Storm Bolter
@@ -1410,16 +1119,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Nemesis Force Weapon
@@ -1485,16 +1185,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Nemesis Warding Stave
@@ -1572,9 +1263,7 @@
              Abilities
             </p>
             <h6>
-             <p>
-              Abilities
-             </p>
+             Abilities
             </h6>
             <p>
              ngRepeat: ab in operative.abilities
@@ -1661,9 +1350,7 @@
           </p>
           <div>
            <h6>
-            <p>
-             Notes
-            </p>
+            Notes
            </h6>
            <p>
            </p>
@@ -1710,9 +1397,7 @@
          </p>
          <div>
           <h2>
-           <p>
-            Grey Knight Justicar
-           </p>
+           Grey Knight Justicar
           </h2>
           <p>
            Specialisms
@@ -1776,12 +1461,8 @@
            </p>
            <div>
             <h3>
-             <p>
-              ngIf: operative.edition == 'kt21'
-             </p>
-             <p>
-              ngIf: operative.edition == 'kt24'
-             </p>
+             ngIf: operative.edition == 'kt21'
+             ngIf: operative.edition == 'kt24'
              <div>
               <p>
                Card View
@@ -1872,9 +1553,7 @@
                ngIf: settings['display'] == 'list'
               </p>
              </div>
-             <p>
-              end ngIf: operative.edition == 'kt24'
-             </p>
+             end ngIf: operative.edition == 'kt24'
             </h3>
            </div>
           </div>
@@ -1890,30 +1569,22 @@
              <tr>
               <td>
                <h6>
-                <p>
-                 Weapons
-                </p>
+                Weapons
                </h6>
               </td>
               <td>
                <h6>
-                <p>
-                 ATK
-                </p>
+                ATK
                </h6>
               </td>
               <td>
                <h6>
-                <p>
-                 HIT
-                </p>
+                HIT
                </h6>
               </td>
               <td>
                <h6>
-                <p>
-                 DMG
-                </p>
+                DMG
                </h6>
               </td>
              </tr>
@@ -1935,16 +1606,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Storm Bolter
@@ -2010,16 +1672,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Nemesis Daemon Hammer
@@ -2085,16 +1738,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Nemesis Falchions
@@ -2160,16 +1804,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Nemesis Force Weapon
@@ -2235,16 +1870,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Nemesis Warding Stave
@@ -2322,9 +1948,7 @@
              Abilities
             </p>
             <h6>
-             <p>
-              Abilities
-             </p>
+             Abilities
             </h6>
             <p>
              ngRepeat: ab in operative.abilities
@@ -2403,9 +2027,7 @@
           </p>
           <div>
            <h6>
-            <p>
-             Notes
-            </p>
+            Notes
            </h6>
            <p>
            </p>
@@ -2452,9 +2074,7 @@
          </p>
          <div>
           <h2>
-           <p>
-            Grey Knight Warrior
-           </p>
+           Grey Knight Warrior
           </h2>
           <p>
            Specialisms
@@ -2518,12 +2138,8 @@
            </p>
            <div>
             <h3>
-             <p>
-              ngIf: operative.edition == 'kt21'
-             </p>
-             <p>
-              ngIf: operative.edition == 'kt24'
-             </p>
+             ngIf: operative.edition == 'kt21'
+             ngIf: operative.edition == 'kt24'
              <div>
               <p>
                Card View
@@ -2614,9 +2230,7 @@
                ngIf: settings['display'] == 'list'
               </p>
              </div>
-             <p>
-              end ngIf: operative.edition == 'kt24'
-             </p>
+             end ngIf: operative.edition == 'kt24'
             </h3>
            </div>
           </div>
@@ -2632,30 +2246,22 @@
              <tr>
               <td>
                <h6>
-                <p>
-                 Weapons
-                </p>
+                Weapons
                </h6>
               </td>
               <td>
                <h6>
-                <p>
-                 ATK
-                </p>
+                ATK
                </h6>
               </td>
               <td>
                <h6>
-                <p>
-                 HIT
-                </p>
+                HIT
                </h6>
               </td>
               <td>
                <h6>
-                <p>
-                 DMG
-                </p>
+                DMG
                </h6>
               </td>
              </tr>
@@ -2677,16 +2283,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Storm Bolter
@@ -2752,16 +2349,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Nemesis Falchions
@@ -2827,16 +2415,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Nemesis Force Weapon
@@ -2902,16 +2481,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Nemesis Warding Stave
@@ -2989,9 +2559,7 @@
              Abilities
             </p>
             <h6>
-             <p>
-              Abilities
-             </p>
+             Abilities
             </h6>
             <p>
              ngRepeat: ab in operative.abilities
@@ -3070,9 +2638,7 @@
           </p>
           <div>
            <h6>
-            <p>
-             Notes
-            </p>
+            Notes
            </h6>
            <p>
            </p>
@@ -3119,9 +2685,7 @@
          </p>
          <div>
           <h2>
-           <p>
-            Grey Knight Purifier
-           </p>
+           Grey Knight Purifier
           </h2>
           <p>
            Specialisms
@@ -3185,12 +2749,8 @@
            </p>
            <div>
             <h3>
-             <p>
-              ngIf: operative.edition == 'kt21'
-             </p>
-             <p>
-              ngIf: operative.edition == 'kt24'
-             </p>
+             ngIf: operative.edition == 'kt21'
+             ngIf: operative.edition == 'kt24'
              <div>
               <p>
                Card View
@@ -3281,9 +2841,7 @@
                ngIf: settings['display'] == 'list'
               </p>
              </div>
-             <p>
-              end ngIf: operative.edition == 'kt24'
-             </p>
+             end ngIf: operative.edition == 'kt24'
             </h3>
            </div>
           </div>
@@ -3299,30 +2857,22 @@
              <tr>
               <td>
                <h6>
-                <p>
-                 Weapons
-                </p>
+                Weapons
                </h6>
               </td>
               <td>
                <h6>
-                <p>
-                 ATK
-                </p>
+                ATK
                </h6>
               </td>
               <td>
                <h6>
-                <p>
-                 HIT
-                </p>
+                HIT
                </h6>
               </td>
               <td>
                <h6>
-                <p>
-                 DMG
-                </p>
+                DMG
                </h6>
               </td>
              </tr>
@@ -3344,16 +2894,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Psychic Overload
@@ -3419,16 +2960,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Storm Bolter
@@ -3494,16 +3026,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Nemesis Falchions
@@ -3569,16 +3092,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Nemesis Force Weapon
@@ -3644,16 +3158,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Nemesis Warding Stave
@@ -3731,9 +3236,7 @@
              Abilities
             </p>
             <h6>
-             <p>
-              Abilities
-             </p>
+             Abilities
             </h6>
             <p>
              ngRepeat: ab in operative.abilities
@@ -3812,9 +3315,7 @@
           </p>
           <div>
            <h6>
-            <p>
-             Notes
-            </p>
+            Notes
            </h6>
            <p>
            </p>
@@ -3861,9 +3362,7 @@
          </p>
          <div>
           <h2>
-           <p>
-            Grey Knight Interceptor
-           </p>
+           Grey Knight Interceptor
           </h2>
           <p>
            Specialisms
@@ -3927,12 +3426,8 @@
            </p>
            <div>
             <h3>
-             <p>
-              ngIf: operative.edition == 'kt21'
-             </p>
-             <p>
-              ngIf: operative.edition == 'kt24'
-             </p>
+             ngIf: operative.edition == 'kt21'
+             ngIf: operative.edition == 'kt24'
              <div>
               <p>
                Card View
@@ -4023,9 +3518,7 @@
                ngIf: settings['display'] == 'list'
               </p>
              </div>
-             <p>
-              end ngIf: operative.edition == 'kt24'
-             </p>
+             end ngIf: operative.edition == 'kt24'
             </h3>
            </div>
           </div>
@@ -4041,30 +3534,22 @@
              <tr>
               <td>
                <h6>
-                <p>
-                 Weapons
-                </p>
+                Weapons
                </h6>
               </td>
               <td>
                <h6>
-                <p>
-                 ATK
-                </p>
+                ATK
                </h6>
               </td>
               <td>
                <h6>
-                <p>
-                 HIT
-                </p>
+                HIT
                </h6>
               </td>
               <td>
                <h6>
-                <p>
-                 DMG
-                </p>
+                DMG
                </h6>
               </td>
              </tr>
@@ -4086,16 +3571,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Storm Bolter
@@ -4161,16 +3637,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Nemesis Falchions
@@ -4236,16 +3703,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Nemesis Force Weapon
@@ -4311,16 +3769,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Nemesis Warding Stave
@@ -4398,9 +3847,7 @@
              Abilities
             </p>
             <h6>
-             <p>
-              Abilities
-             </p>
+             Abilities
             </h6>
             <p>
              ngRepeat: ab in operative.abilities
@@ -4487,9 +3934,7 @@
           </p>
           <div>
            <h6>
-            <p>
-             Notes
-            </p>
+            Notes
            </h6>
            <p>
            </p>
@@ -4536,9 +3981,7 @@
          </p>
          <div>
           <h2>
-           <p>
-            Grey Knight Purgator
-           </p>
+           Grey Knight Purgator
           </h2>
           <p>
            Specialisms
@@ -4602,12 +4045,8 @@
            </p>
            <div>
             <h3>
-             <p>
-              ngIf: operative.edition == 'kt21'
-             </p>
-             <p>
-              ngIf: operative.edition == 'kt24'
-             </p>
+             ngIf: operative.edition == 'kt21'
+             ngIf: operative.edition == 'kt24'
              <div>
               <p>
                Card View
@@ -4698,9 +4137,7 @@
                ngIf: settings['display'] == 'list'
               </p>
              </div>
-             <p>
-              end ngIf: operative.edition == 'kt24'
-             </p>
+             end ngIf: operative.edition == 'kt24'
             </h3>
            </div>
           </div>
@@ -4716,30 +4153,22 @@
              <tr>
               <td>
                <h6>
-                <p>
-                 Weapons
-                </p>
+                Weapons
                </h6>
               </td>
               <td>
                <h6>
-                <p>
-                 ATK
-                </p>
+                ATK
                </h6>
               </td>
               <td>
                <h6>
-                <p>
-                 HIT
-                </p>
+                HIT
                </h6>
               </td>
               <td>
                <h6>
-                <p>
-                 DMG
-                </p>
+                DMG
                </h6>
               </td>
              </tr>
@@ -4761,16 +4190,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Incinerator
@@ -4836,16 +4256,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Psilencer
@@ -4911,16 +4322,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Psycannon
@@ -4986,16 +4388,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Fists
@@ -5065,9 +4458,7 @@
              Abilities
             </p>
             <h6>
-             <p>
-              Abilities
-             </p>
+             Abilities
             </h6>
             <p>
              ngRepeat: ab in operative.abilities
@@ -5138,9 +4529,7 @@
           </p>
           <div>
            <h6>
-            <p>
-             Notes
-            </p>
+            Notes
            </h6>
            <p>
            </p>
@@ -5182,18 +4571,14 @@
    </div>
   </div>
   <h1>
-   <p>
-    Kill Team Composition
-   </p>
+   Kill Team Composition
    <sup>
     <i>
     </i>
    </sup>
   </h1>
   <h3>
-   <p>
-    Grey Knights
-   </p>
+   Grey Knights
    <sup>
     <i>
     </i>
@@ -5421,9 +4806,7 @@
       Strategic Ploys
      </p>
      <h3>
-      <p>
-       Strategy Ploys
-      </p>
+      Strategy Ploys
      </h3>
      <p>
       ngRepeat: ploy in killteam.ploys.strat
@@ -5434,17 +4817,13 @@
         ngIf: MODE == 'Dashboard' &amp;&amp; ploy.ploytype == 'S' &amp;&amp; ploy.factionid == dashboardroster.factionid &amp;&amp; ploy.killteamid == dashboardroster.killteamid
        </p>
        <h5>
-        <p>
-         And They Shall Know No Fear
-        </p>
+        And They Shall Know No Fear
        </h5>
        <p>
-        em class="oswald"&gt;({{ ploy.ploytype == 'S' ? 'Strategic' : 'Tactical' }} Ploy)
+        em class="oswald"&gt;({{ ploy.ploytype == 'S' ? 'Strategic' : 'Tactical' }} Ploy)&lt;/em
        </p>
        <h5>
-        <p>
-         1 CP
-        </p>
+        1 CP
        </h5>
       </div>
       <p>
@@ -5462,17 +4841,13 @@
         ngIf: MODE == 'Dashboard' &amp;&amp; ploy.ploytype == 'S' &amp;&amp; ploy.factionid == dashboardroster.factionid &amp;&amp; ploy.killteamid == dashboardroster.killteamid
        </p>
        <h5>
-        <p>
-         Focused Mind
-        </p>
+        Focused Mind
        </h5>
        <p>
-        em class="oswald"&gt;({{ ploy.ploytype == 'S' ? 'Strategic' : 'Tactical' }} Ploy)
+        em class="oswald"&gt;({{ ploy.ploytype == 'S' ? 'Strategic' : 'Tactical' }} Ploy)&lt;/em
        </p>
        <h5>
-        <p>
-         1 CP
-        </p>
+        1 CP
        </h5>
       </div>
       <p>
@@ -5490,17 +4865,13 @@
         ngIf: MODE == 'Dashboard' &amp;&amp; ploy.ploytype == 'S' &amp;&amp; ploy.factionid == dashboardroster.factionid &amp;&amp; ploy.killteamid == dashboardroster.killteamid
        </p>
        <h5>
-        <p>
-         Tide Of Celerity
-        </p>
+        Tide Of Celerity
        </h5>
        <p>
-        em class="oswald"&gt;({{ ploy.ploytype == 'S' ? 'Strategic' : 'Tactical' }} Ploy)
+        em class="oswald"&gt;({{ ploy.ploytype == 'S' ? 'Strategic' : 'Tactical' }} Ploy)&lt;/em
        </p>
        <h5>
-        <p>
-         1 CP
-        </p>
+        1 CP
        </h5>
       </div>
       <p>
@@ -5518,17 +4889,13 @@
         ngIf: MODE == 'Dashboard' &amp;&amp; ploy.ploytype == 'S' &amp;&amp; ploy.factionid == dashboardroster.factionid &amp;&amp; ploy.killteamid == dashboardroster.killteamid
        </p>
        <h5>
-        <p>
-         Tide Of Shadows
-        </p>
+        Tide Of Shadows
        </h5>
        <p>
-        em class="oswald"&gt;({{ ploy.ploytype == 'S' ? 'Strategic' : 'Tactical' }} Ploy)
+        em class="oswald"&gt;({{ ploy.ploytype == 'S' ? 'Strategic' : 'Tactical' }} Ploy)&lt;/em
        </p>
        <h5>
-        <p>
-         1 CP
-        </p>
+        1 CP
        </h5>
       </div>
       <p>
@@ -5546,9 +4913,7 @@
       Tactical Ploys
      </p>
      <h3>
-      <p>
-       Firefight Ploys
-      </p>
+      Firefight Ploys
      </h3>
      <p>
       ngRepeat: ploy in killteam.ploys.tac
@@ -5559,17 +4924,13 @@
         ngIf: MODE == 'Dashboard' &amp;&amp; ploy.ploytype == 'S' &amp;&amp; ploy.factionid == dashboardroster.factionid &amp;&amp; ploy.killteamid == dashboardroster.killteamid
        </p>
        <h5>
-        <p>
-         Mists of Deimos
-        </p>
+        Mists of Deimos
        </h5>
        <p>
-        em class="oswald"&gt;({{ ploy.ploytype == 'S' ? 'Strategic' : 'Tactical' }} Ploy)
+        em class="oswald"&gt;({{ ploy.ploytype == 'S' ? 'Strategic' : 'Tactical' }} Ploy)&lt;/em
        </p>
        <h5>
-        <p>
-         1 CP
-        </p>
+        1 CP
        </h5>
       </div>
       <p>
@@ -5587,17 +4948,13 @@
         ngIf: MODE == 'Dashboard' &amp;&amp; ploy.ploytype == 'S' &amp;&amp; ploy.factionid == dashboardroster.factionid &amp;&amp; ploy.killteamid == dashboardroster.killteamid
        </p>
        <h5>
-        <p>
-         Anathema
-        </p>
+        Anathema
        </h5>
        <p>
-        em class="oswald"&gt;({{ ploy.ploytype == 'S' ? 'Strategic' : 'Tactical' }} Ploy)
+        em class="oswald"&gt;({{ ploy.ploytype == 'S' ? 'Strategic' : 'Tactical' }} Ploy)&lt;/em
        </p>
        <h5>
-        <p>
-         1 CP
-        </p>
+        1 CP
        </h5>
       </div>
       <p>
@@ -5615,25 +4972,18 @@
         ngIf: MODE == 'Dashboard' &amp;&amp; ploy.ploytype == 'S' &amp;&amp; ploy.factionid == dashboardroster.factionid &amp;&amp; ploy.killteamid == dashboardroster.killteamid
        </p>
        <h5>
-        <p>
-         Radiant Strike
-        </p>
+        Radiant Strike
        </h5>
        <p>
-        em class="oswald"&gt;({{ ploy.ploytype == 'S' ? 'Strategic' : 'Tactical' }} Ploy)
+        em class="oswald"&gt;({{ ploy.ploytype == 'S' ? 'Strategic' : 'Tactical' }} Ploy)&lt;/em
        </p>
        <h5>
-        <p>
-         1 CP
-        </p>
+        1 CP
        </h5>
       </div>
       <p>
        <p>
-        Use this firefight ploy when a friendly GREY KNIGHT operative is performing the Fight action during an activation in which it has performed the Charge action, at the start of the Resolve Attack Dice step. Until the end of that action: Its melee weapon has the Shock weapon rule. The first time you strike during that sequence, inflict 1 additional damage (to a maximum of 7).
-       </p>
-       <p>
-        Shock: The first time you strike with a critical success in each sequence, also discard one of your opponent's unresolved normal successes (or a critical success if there are none).
+        Use this firefight ploy when a friendly GREY KNIGHT operative is performing the Fight action during an activation in which it has performed the Charge action, at the start of the Resolve Attack Dice step. Until the end of that action: Its melee weapon has the Shock weapon rule. The first time you strike during that sequence, inflict 1 additional damage (to a maximum of 7). Shock: The first time you strike with a critical success in each sequence, also discard one of your opponent's unresolved normal successes (or a critical success if there are none).
        </p>
       </p>
      </any>
@@ -5646,17 +4996,13 @@
         ngIf: MODE == 'Dashboard' &amp;&amp; ploy.ploytype == 'S' &amp;&amp; ploy.factionid == dashboardroster.factionid &amp;&amp; ploy.killteamid == dashboardroster.killteamid
        </p>
        <h5>
-        <p>
-         Transhuman Physiology
-        </p>
+        Transhuman Physiology
        </h5>
        <p>
-        em class="oswald"&gt;({{ ploy.ploytype == 'S' ? 'Strategic' : 'Tactical' }} Ploy)
+        em class="oswald"&gt;({{ ploy.ploytype == 'S' ? 'Strategic' : 'Tactical' }} Ploy)&lt;/em
        </p>
        <h5>
-        <p>
-         1 CP
-        </p>
+        1 CP
        </h5>
       </div>
       <p>
@@ -5685,17 +5031,13 @@
      </p>
      <div>
       <h5>
-       <p>
-        Hexagrammic Ward
-       </p>
+       Hexagrammic Ward
       </h5>
       <p>
        ngIf: eq.eqpts &gt; '0'
       </p>
       <h5>
-       <p>
-        2 EP
-       </p>
+       2 EP
       </h5>
       <p>
        end ngIf: eq.eqpts &gt; '0'
@@ -5725,17 +5067,13 @@
      </p>
      <div>
       <h5>
-       <p>
-        Psybolt Ammunition
-       </p>
+       Psybolt Ammunition
       </h5>
       <p>
        ngIf: eq.eqpts &gt; '0'
       </p>
       <h5>
-       <p>
-        3 EP
-       </p>
+       3 EP
       </h5>
       <p>
        end ngIf: eq.eqpts &gt; '0'
@@ -5765,17 +5103,13 @@
      </p>
      <div>
       <h5>
-       <p>
-        Sanctic Blessing
-       </p>
+       Sanctic Blessing
       </h5>
       <p>
        ngIf: eq.eqpts &gt; '0'
       </p>
       <h5>
-       <p>
-        2 EP
-       </p>
+       2 EP
       </h5>
       <p>
        end ngIf: eq.eqpts &gt; '0'
@@ -5805,9 +5139,7 @@
      </p>
      <div>
       <h5>
-       <p>
-        Purity Seals
-       </p>
+       Purity Seals
       </h5>
       <p>
        ngIf: eq.eqpts &gt; '0'
@@ -5844,18 +5176,14 @@
       ngIf: $index &gt; 0 &amp;&amp; killteam.equipments[$index].eqcategory != killteam.equipments[$index - 1].eqcategory
      </p>
      <h4>
-      <p>
-       Universal Equipment
-      </p>
+      Universal Equipment
      </h4>
      <p>
       end ngIf: $index &gt; 0 &amp;&amp; killteam.equipments[$index].eqcategory != killteam.equipments[$index - 1].eqcategory
      </p>
      <div>
       <h5>
-       <p>
-        Ammo Cache
-       </p>
+       Ammo Cache
       </h5>
       <p>
        ngIf: eq.eqpts &gt; '0'
@@ -5909,9 +5237,7 @@
      </p>
      <div>
       <h5>
-       <p>
-        Razor Wire
-       </p>
+       Razor Wire
       </h5>
       <p>
        ngIf: eq.eqpts &gt; '0'
@@ -5953,9 +5279,7 @@
      </p>
      <div>
       <h5>
-       <p>
-        Comms Device
-       </p>
+       Comms Device
       </h5>
       <p>
        ngIf: eq.eqpts &gt; '0'
@@ -5993,9 +5317,7 @@
      </p>
      <div>
       <h5>
-       <p>
-        Mines
-       </p>
+       Mines
       </h5>
       <p>
        ngIf: eq.eqpts &gt; '0'
@@ -6033,9 +5355,7 @@
      </p>
      <div>
       <h5>
-       <p>
-        Light Barricades
-       </p>
+       Light Barricades
       </h5>
       <p>
        ngIf: eq.eqpts &gt; '0'
@@ -6073,9 +5393,7 @@
      </p>
      <div>
       <h5>
-       <p>
-        Heavy Barricade
-       </p>
+       Heavy Barricade
       </h5>
       <p>
        ngIf: eq.eqpts &gt; '0'
@@ -6113,9 +5431,7 @@
      </p>
      <div>
       <h5>
-       <p>
-        Ladders
-       </p>
+       Ladders
       </h5>
       <p>
        ngIf: eq.eqpts &gt; '0'
@@ -6178,9 +5494,7 @@
      </p>
      <div>
       <h5>
-       <p>
-        Portable Barricade
-       </p>
+       Portable Barricade
       </h5>
       <p>
        ngIf: eq.eqpts &gt; '0'
@@ -6253,9 +5567,7 @@
      </p>
      <div>
       <h5>
-       <p>
-        Utility Grenade - Smoke
-       </p>
+       Utility Grenade - Smoke
       </h5>
       <p>
        ngIf: eq.eqpts &gt; '0'
@@ -6322,9 +5634,7 @@
      </p>
      <div>
       <h5>
-       <p>
-        Utility Grenade - Stun
-       </p>
+       Utility Grenade - Stun
       </h5>
       <p>
        ngIf: eq.eqpts &gt; '0'
@@ -6381,9 +5691,7 @@
      </p>
      <div>
       <h5>
-       <p>
-        Explosive Grenade - Frag
-       </p>
+       Explosive Grenade - Frag
       </h5>
       <p>
        ngIf: eq.eqpts &gt; '0'
@@ -6485,9 +5793,7 @@
      </p>
      <div>
       <h5>
-       <p>
-        Explosive Grenade - Krak
-       </p>
+       Explosive Grenade - Krak
       </h5>
       <p>
        ngIf: eq.eqpts &gt; '0'
@@ -6594,9 +5900,7 @@
      <div>
       <div>
        <h5>
-        <p>
-         Champion
-        </p>
+        Champion
        </h5>
        <em>
         <p>
@@ -6649,9 +5953,7 @@
      <div>
       <div>
        <h5>
-        <p>
-         Overrun
-        </p>
+        Overrun
        </h5>
        <em>
         <p>
@@ -6697,9 +5999,7 @@
      <div>
       <div>
        <h5>
-        <p>
-         Storm Objectives
-        </p>
+        Storm Objectives
        </h5>
        <em>
         <p>
@@ -6756,9 +6056,7 @@
      <div>
       <div>
        <h5>
-        <p>
-         Contain
-        </p>
+        Contain
        </h5>
        <em>
         <p>
@@ -6808,9 +6106,7 @@
      <div>
       <div>
        <h5>
-        <p>
-         Secure Centre
-        </p>
+        Secure Centre
        </h5>
        <em>
         <p>
@@ -6860,9 +6156,7 @@
      <div>
       <div>
        <h5>
-        <p>
-         Take Ground
-        </p>
+        Take Ground
        </h5>
        <em>
         <p>
@@ -7030,12 +6324,7 @@
               </a>
              </li>
              <p>
-              li&gt;
-              <a class="pointer dropdown-item p-1" data-bs-placement="top" data-bs-toggle="tooltip" href="/printroster.php?rid={{ myRoster.rosterid }}" target="_blank" title="Print Roster">
-               <i class="fas fa-print fa-fw">
-               </i>
-               Print Roster
-              </a>
+              li&gt;&lt;a class="pointer dropdown-item p-1" href="/printroster.php?rid={{ myRoster.rosterid }}" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" title="Print Roster"&gt;&lt;i class="fas fa-print fa-fw"&gt;&lt;/i&gt; Print Roster&lt;/a&gt;&lt;/li
              </p>
              <p>
               ngIf: MODE == 'MyRosters'
@@ -7253,12 +6542,7 @@
               </a>
              </li>
              <p>
-              li&gt;
-              <a class="pointer dropdown-item p-1" data-bs-placement="top" data-bs-toggle="tooltip" href="/printroster.php?rid={{ myRoster.rosterid }}" target="_blank" title="Print Roster">
-               <i class="fas fa-print fa-fw">
-               </i>
-               Print Roster
-              </a>
+              li&gt;&lt;a class="pointer dropdown-item p-1" href="/printroster.php?rid={{ myRoster.rosterid }}" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" title="Print Roster"&gt;&lt;i class="fas fa-print fa-fw"&gt;&lt;/i&gt; Print Roster&lt;/a&gt;&lt;/li
              </p>
              <p>
               ngIf: MODE == 'MyRosters'
@@ -7476,12 +6760,7 @@
               </a>
              </li>
              <p>
-              li&gt;
-              <a class="pointer dropdown-item p-1" data-bs-placement="top" data-bs-toggle="tooltip" href="/printroster.php?rid={{ myRoster.rosterid }}" target="_blank" title="Print Roster">
-               <i class="fas fa-print fa-fw">
-               </i>
-               Print Roster
-              </a>
+              li&gt;&lt;a class="pointer dropdown-item p-1" href="/printroster.php?rid={{ myRoster.rosterid }}" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" title="Print Roster"&gt;&lt;i class="fas fa-print fa-fw"&gt;&lt;/i&gt; Print Roster&lt;/a&gt;&lt;/li
              </p>
              <p>
               ngIf: MODE == 'MyRosters'
@@ -7688,12 +6967,7 @@
               </a>
              </li>
              <p>
-              li&gt;
-              <a class="pointer dropdown-item p-1" data-bs-placement="top" data-bs-toggle="tooltip" href="/printroster.php?rid={{ myRoster.rosterid }}" target="_blank" title="Print Roster">
-               <i class="fas fa-print fa-fw">
-               </i>
-               Print Roster
-              </a>
+              li&gt;&lt;a class="pointer dropdown-item p-1" href="/printroster.php?rid={{ myRoster.rosterid }}" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" title="Print Roster"&gt;&lt;i class="fas fa-print fa-fw"&gt;&lt;/i&gt; Print Roster&lt;/a&gt;&lt;/li
              </p>
              <p>
               ngIf: MODE == 'MyRosters'
@@ -7913,9 +7187,7 @@
   <div>
    <div>
     <h5>
-     <p>
-      Loading
-     </p>
+     Loading
     </h5>
    </div>
    <div>
@@ -7936,8 +7208,6 @@
    <div>
     <h5>
     </h5>
-    <button>
-    </button>
    </div>
    <div>
     <p>
@@ -7988,12 +7258,8 @@
     <h5>
      <i>
      </i>
-     <p>
-      Share Roster
-     </p>
+     Share Roster
     </h5>
-    <button>
-    </button>
    </div>
    <div>
     <p>
@@ -8054,12 +7320,8 @@
     <h5>
      <i>
      </i>
-     <p>
-      Share Roster Gallery
-     </p>
+     Share Roster Gallery
     </h5>
-    <button>
-    </button>
    </div>
    <div>
     <p>
@@ -8092,20 +7354,13 @@
     <h5>
      <i>
      </i>
-     <p>
-      New Roster
-     </p>
+     New Roster
     </h5>
-    <button>
-    </button>
    </div>
    <div>
     <h4>
-     <p>
-      Roster Name
-     </p>
+     Roster Name
     </h4>
-    <input/>
     <p>
      ngIf: newroster.rostername.toLowerCase().includes('angle')
     </p>
@@ -8116,9 +7371,7 @@
      ngIf: newroster.rostername.toLowerCase().includes('kinbrand')
     </p>
     <h4>
-     <p>
-      Faction
-     </p>
+     Faction
     </h4>
     <select>
      <option>
@@ -8128,9 +7381,7 @@
      </p>
     </select>
     <h4>
-     <p>
-      KillTeam
-     </p>
+     KillTeam
     </h4>
     <select>
      <option>
@@ -8141,16 +7392,6 @@
     </select>
    </div>
    <div>
-    <button>
-     <p>
-      Cancel
-     </p>
-    </button>
-    <button>
-     <p>
-      Create Roster
-     </p>
-    </button>
    </div>
   </div>
   <div>
@@ -8159,23 +7400,15 @@
      <i>
      </i>
     </h5>
-    <button>
-    </button>
    </div>
    <div>
     <h4>
-     <p>
-      Roster Name
-     </p>
+     Roster Name
     </h4>
-    <input/>
     <br/>
     <h4>
-     <p>
-      Notes
-     </p>
+     Notes
     </h4>
-    <textarea></textarea>
     <br/>
     <br/>
     <p>
@@ -8183,35 +7416,21 @@
     </p>
     <div>
      <h4>
-      <p>
-       Keyword
-      </p>
+      Keyword
      </h4>
      <em>
      </em>
      <br/>
-     <input/>
      <br/>
     </div>
     <p>
      end ngIf: getRosterCustomkeyword(rostertoedit) != ''
     </p>
-    <input/>
     <p>
      Copy portraits when imported by other users
     </p>
    </div>
    <div>
-    <button>
-     <p>
-      Cancel
-     </p>
-    </button>
-    <button>
-     <p>
-      Save
-     </p>
-    </button>
    </div>
   </div>
   <div>
@@ -8219,18 +7438,12 @@
     <h5>
      <i>
      </i>
-     <p>
-      - Narrative Info
-     </p>
+     - Narrative Info
     </h5>
-    <button>
-    </button>
    </div>
    <div>
     <h4>
-     <p>
-      Requisition Points
-     </p>
+     Requisition Points
     </h4>
     <p>
      ngIf: rostertoedit.userid == currentuser.userid
@@ -8241,35 +7454,16 @@
      ngIf: rostertoedit.userid == currentuser.userid
     </p>
     <h4>
-     <p>
-      Strategic Assets
-     </p>
+     Strategic Assets
     </h4>
-    <textarea></textarea>
     <h4>
-     <p>
-      Equipment Notes
-     </p>
+     Equipment Notes
     </h4>
-    <textarea></textarea>
     <h4>
-     <p>
-      SpecOps Notes
-     </p>
+     SpecOps Notes
     </h4>
-    <textarea></textarea>
    </div>
    <div>
-    <button>
-     <p>
-      Cancel
-     </p>
-    </button>
-    <button>
-     <p>
-      Save
-     </p>
-    </button>
    </div>
   </div>
   <div>
@@ -8277,12 +7471,8 @@
     <h5>
      <i>
      </i>
-     <p>
-      Delete Roster
-     </p>
+     Delete Roster
     </h5>
-    <button>
-    </button>
    </div>
    <div>
     <p>
@@ -8290,16 +7480,6 @@
     </p>
    </div>
    <div>
-    <button>
-     <p>
-      Cancel
-     </p>
-    </button>
-    <button>
-     <p>
-      Delete
-     </p>
-    </button>
    </div>
   </div>
   <div>
@@ -8307,12 +7487,8 @@
     <h5>
      <i>
      </i>
-     <p>
-      Add Operative to
-     </p>
+     Add Operative to
     </h5>
-    <button>
-    </button>
    </div>
    <div>
     <p>
@@ -8322,9 +7498,7 @@
      ngIf: addop.killteam.fireteams.length &gt; 1
     </p>
     <h6>
-     <p>
-      Operative
-     </p>
+     Operative
     </h6>
     <select>
      <option>
@@ -8334,9 +7508,7 @@
      </p>
     </select>
     <h6>
-     <p>
-      Operative Name
-     </p>
+     Operative Name
     </h6>
     <p>
      ngIf: settings['useoptypeasname'] == 'n'
@@ -8350,7 +7522,6 @@
      end ngIf: settings['useoptypeasname'] == 'n'
     </p>
     <br/>
-    <input/>
     <br/>
     <p>
      Characteristics/Stats
@@ -8360,16 +7531,6 @@
     </p>
    </div>
    <div>
-    <button>
-     <p>
-      Cancel
-     </p>
-    </button>
-    <button>
-     <p>
-      Add to Team
-     </p>
-    </button>
    </div>
   </div>
   <div>
@@ -8380,15 +7541,11 @@
       </i>
      </h5>
     </div>
-    <button>
-    </button>
     <br/>
    </div>
    <div>
     <h6>
-     <p>
-      Operative Name
-     </p>
+     Operative Name
     </h6>
     <p>
      ngIf: settings['useoptypeasname'] == 'n'
@@ -8402,7 +7559,6 @@
      end ngIf: settings['useoptypeasname'] == 'n'
     </p>
     <br/>
-    <input/>
     <br/>
     <p>
      Weapons List
@@ -8418,20 +7574,14 @@
      ngIf: settings['shownarrative'] == 'y' &amp;&amp; tempeditop.specialisms != ''
     </p>
     <h6>
-     <p>
-      ngIf: tempeditop.edition == 'kt21'
-     </p>
-     <p>
-      ngIf: tempeditop.edition != 'kt21'
-     </p>
+     ngIf: tempeditop.edition == 'kt21'
+     ngIf: tempeditop.edition != 'kt21'
      <span>
       <p>
        Options
       </p>
      </span>
-     <p>
-      end ngIf: tempeditop.edition != 'kt21'
-     </p>
+     end ngIf: tempeditop.edition != 'kt21'
     </h6>
     <div>
      <p>
@@ -8443,27 +7593,13 @@
     </div>
    </div>
    <div>
-    <button>
-     <p>
-      Cancel
-     </p>
-    </button>
-    <button>
-     <p>
-      Save
-     </p>
-    </button>
    </div>
   </div>
   <div>
    <div>
     <h5>
-     <p>
-      's Equipment
-     </p>
+     's Equipment
     </h5>
-    <button>
-    </button>
    </div>
    <div>
     <p>
@@ -8474,16 +7610,6 @@
     </p>
    </div>
    <div>
-    <button>
-     <p>
-      Cancel
-     </p>
-    </button>
-    <button>
-     <p>
-      Save
-     </p>
-    </button>
    </div>
   </div>
   <div>
@@ -8491,12 +7617,8 @@
     <h5>
      <i>
      </i>
-     <p>
-      Delete Operative
-     </p>
+     Delete Operative
     </h5>
-    <button>
-    </button>
    </div>
    <div>
     <p>
@@ -8504,16 +7626,6 @@
     </p>
    </div>
    <div>
-    <button>
-     <p>
-      Cancel
-     </p>
-    </button>
-    <button>
-     <p>
-      Delete
-     </p>
-    </button>
    </div>
   </div>
   <div>
@@ -8521,12 +7633,8 @@
     <h5>
      <i>
      </i>
-     <p>
-      Select Opponent Roster
-     </p>
+     Select Opponent Roster
     </h5>
-    <button>
-    </button>
    </div>
    <div>
     <div>
@@ -8537,9 +7645,7 @@
      </div>
      <div>
       <h1>
-       <p>
-        JdKdf73l
-       </p>
+       JdKdf73l
       </h1>
      </div>
     </div>
@@ -8550,21 +7656,10 @@
       </p>
      </div>
      <div>
-      <input/>
      </div>
     </div>
    </div>
    <div>
-    <button>
-     <p>
-      Cancel
-     </p>
-    </button>
-    <button>
-     <p>
-      Confirm
-     </p>
-    </button>
    </div>
   </div>
   <div>
@@ -8572,12 +7667,8 @@
     <h5>
      <i>
      </i>
-     <p>
-      Brotherhood of Psykers
-     </p>
+     Brotherhood of Psykers
     </h5>
-    <button>
-    </button>
    </div>
    <div>
     <p>
@@ -8593,8 +7684,6 @@
      <i>
      </i>
     </h5>
-    <button>
-    </button>
    </div>
    <div>
     <div>
@@ -8602,11 +7691,8 @@
     </div>
     <br/>
     <h4>
-     <p>
-      Upload New Portrait
-     </p>
+     Upload New Portrait
     </h4>
-    <input/>
     <br/>
     <em>
      <p>
@@ -8622,9 +7708,7 @@
      Please don't upload inappropriate photos. I look at every uploaded portrait and will delete suggestive, inappropriate, or offensive photos.
     </p>
     <h4>
-     <p>
-      Help
-     </p>
+     Help
     </h4>
     <div>
      <div>
@@ -8639,21 +7723,6 @@
     </div>
    </div>
    <div>
-    <button>
-     <p>
-      Cancel
-     </p>
-    </button>
-    <button>
-     <p>
-      Delete Custom Portrait
-     </p>
-    </button>
-    <button>
-     <p>
-      Save
-     </p>
-    </button>
    </div>
   </div>
   <div>
@@ -8662,14 +7731,11 @@
      <i>
      </i>
     </h5>
-    <button>
-    </button>
    </div>
    <div>
     <div>
      <img/>
     </div>
-    <input/>
     <br/>
     <em>
      <p>
@@ -8685,9 +7751,7 @@
      Please don't upload inappropriate photos. I look at every uploaded portrait and will delete suggestive, inappropriate, or offensive photos.
     </p>
     <h4>
-     <p>
-      Help
-     </p>
+     Help
     </h4>
     <div>
      <div>
@@ -8702,21 +7766,6 @@
     </div>
    </div>
    <div>
-    <button>
-     <p>
-      Cancel
-     </p>
-    </button>
-    <button>
-     <p>
-      Delete Custom Portrait
-     </p>
-    </button>
-    <button>
-     <p>
-      Save
-     </p>
-    </button>
    </div>
   </div>
   <div>
@@ -8727,8 +7776,6 @@
       </i>
      </sup>
     </h5>
-    <button>
-    </button>
    </div>
    <div>
     <p>
@@ -8775,18 +7822,14 @@
      </p>
      <div>
       <h2>
-       <p>
-        Strategic Ploys
-       </p>
+       Strategic Ploys
       </h2>
       <p>
        ngRepeat: ploy in myRoster.killteam.ploys.strat
       </p>
       <hr/>
       <h2>
-       <p>
-        Tactical Ploys
-       </p>
+       Tactical Ploys
       </h2>
       <p>
        ngRepeat: ploy in myRoster.killteam.ploys.tac
@@ -8805,18 +7848,14 @@
   </div>
   <div>
    <h2>
-    <p>
-     Strategic Ploys
-    </p>
+    Strategic Ploys
    </h2>
    <p>
     ngRepeat: ploy in myRoster.killteam.ploys.strat
    </p>
    <hr/>
    <h2>
-    <p>
-     Tactical Ploys
-    </p>
+    Tactical Ploys
    </h2>
    <p>
     ngRepeat: ploy in myRoster.killteam.ploys.tac
@@ -8825,18 +7864,12 @@
   <div>
    <div>
     <h5>
-     <p>
-      Print Roster
-     </p>
+     Print Roster
     </h5>
-    <button>
-    </button>
    </div>
    <div>
     <h2>
-     <p>
-      Print Mode
-     </p>
+     Print Mode
     </h2>
     <ul>
      <li>
@@ -8885,14 +7918,12 @@
       </a>
      </li>
     </ul>
-    <input/>
     <label>
      <p>
       Print Ploys
      </p>
     </label>
     <br/>
-    <input/>
     <label>
      <p>
       Print Equipments
@@ -8900,11 +7931,6 @@
     </label>
    </div>
    <div>
-    <button>
-     <p>
-      Close
-     </p>
-    </button>
    </div>
   </div>
   <a>
@@ -8940,12 +7966,8 @@
   <div>
    <div>
     <h5>
-     <p>
-      Install KTDash
-     </p>
+     Install KTDash
     </h5>
-    <button>
-    </button>
    </div>
    <div>
     <p>
@@ -8955,16 +7977,6 @@
     </p>
    </div>
    <div>
-    <button>
-     <p>
-      Cancel
-     </p>
-    </button>
-    <button>
-     <p>
-      Install
-     </p>
-    </button>
    </div>
   </div>
   <div>
@@ -8972,9 +7984,7 @@
     Killteam Composition
    </p>
    <h1>
-    <p>
-     Kill Team Composition
-    </p>
+    Kill Team Composition
     <sup>
      <i>
      </i>
@@ -8986,9 +7996,7 @@
     </p>
     <div>
      <h3>
-      <p>
-       Grey Knights
-      </p>
+      Grey Knights
       <sup>
        <i>
        </i>
@@ -9012,9 +8020,7 @@
          </p>
          <div>
           <h2>
-           <p>
-            Brotherhood Librarian
-           </p>
+           Brotherhood Librarian
           </h2>
           <p>
            Specialisms
@@ -9078,12 +8084,8 @@
            </p>
            <div>
             <h3>
-             <p>
-              ngIf: operative.edition == 'kt21'
-             </p>
-             <p>
-              ngIf: operative.edition == 'kt24'
-             </p>
+             ngIf: operative.edition == 'kt21'
+             ngIf: operative.edition == 'kt24'
              <div>
               <p>
                Card View
@@ -9174,9 +8176,7 @@
                ngIf: settings['display'] == 'list'
               </p>
              </div>
-             <p>
-              end ngIf: operative.edition == 'kt24'
-             </p>
+             end ngIf: operative.edition == 'kt24'
             </h3>
            </div>
           </div>
@@ -9192,30 +8192,22 @@
              <tr>
               <td>
                <h6>
-                <p>
-                 Weapons
-                </p>
+                Weapons
                </h6>
               </td>
               <td>
                <h6>
-                <p>
-                 ATK
-                </p>
+                ATK
                </h6>
               </td>
               <td>
                <h6>
-                <p>
-                 HIT
-                </p>
+                HIT
                </h6>
               </td>
               <td>
                <h6>
-                <p>
-                 DMG
-                </p>
+                DMG
                </h6>
               </td>
              </tr>
@@ -9237,16 +8229,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Storm Bolter
@@ -9312,16 +8295,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Nemesis Force Weapon
@@ -9387,16 +8361,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Nemesis Warding Stave
@@ -9474,9 +8439,7 @@
              Abilities
             </p>
             <h6>
-             <p>
-              Abilities
-             </p>
+             Abilities
             </h6>
             <p>
              ngRepeat: ab in operative.abilities
@@ -9563,9 +8526,7 @@
           </p>
           <div>
            <h6>
-            <p>
-             Notes
-            </p>
+            Notes
            </h6>
            <p>
            </p>
@@ -9612,9 +8573,7 @@
          </p>
          <div>
           <h2>
-           <p>
-            Grey Knight Justicar
-           </p>
+           Grey Knight Justicar
           </h2>
           <p>
            Specialisms
@@ -9678,12 +8637,8 @@
            </p>
            <div>
             <h3>
-             <p>
-              ngIf: operative.edition == 'kt21'
-             </p>
-             <p>
-              ngIf: operative.edition == 'kt24'
-             </p>
+             ngIf: operative.edition == 'kt21'
+             ngIf: operative.edition == 'kt24'
              <div>
               <p>
                Card View
@@ -9774,9 +8729,7 @@
                ngIf: settings['display'] == 'list'
               </p>
              </div>
-             <p>
-              end ngIf: operative.edition == 'kt24'
-             </p>
+             end ngIf: operative.edition == 'kt24'
             </h3>
            </div>
           </div>
@@ -9792,30 +8745,22 @@
              <tr>
               <td>
                <h6>
-                <p>
-                 Weapons
-                </p>
+                Weapons
                </h6>
               </td>
               <td>
                <h6>
-                <p>
-                 ATK
-                </p>
+                ATK
                </h6>
               </td>
               <td>
                <h6>
-                <p>
-                 HIT
-                </p>
+                HIT
                </h6>
               </td>
               <td>
                <h6>
-                <p>
-                 DMG
-                </p>
+                DMG
                </h6>
               </td>
              </tr>
@@ -9837,16 +8782,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Storm Bolter
@@ -9912,16 +8848,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Nemesis Daemon Hammer
@@ -9987,16 +8914,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Nemesis Falchions
@@ -10062,16 +8980,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Nemesis Force Weapon
@@ -10137,16 +9046,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Nemesis Warding Stave
@@ -10224,9 +9124,7 @@
              Abilities
             </p>
             <h6>
-             <p>
-              Abilities
-             </p>
+             Abilities
             </h6>
             <p>
              ngRepeat: ab in operative.abilities
@@ -10305,9 +9203,7 @@
           </p>
           <div>
            <h6>
-            <p>
-             Notes
-            </p>
+            Notes
            </h6>
            <p>
            </p>
@@ -10354,9 +9250,7 @@
          </p>
          <div>
           <h2>
-           <p>
-            Grey Knight Warrior
-           </p>
+           Grey Knight Warrior
           </h2>
           <p>
            Specialisms
@@ -10420,12 +9314,8 @@
            </p>
            <div>
             <h3>
-             <p>
-              ngIf: operative.edition == 'kt21'
-             </p>
-             <p>
-              ngIf: operative.edition == 'kt24'
-             </p>
+             ngIf: operative.edition == 'kt21'
+             ngIf: operative.edition == 'kt24'
              <div>
               <p>
                Card View
@@ -10516,9 +9406,7 @@
                ngIf: settings['display'] == 'list'
               </p>
              </div>
-             <p>
-              end ngIf: operative.edition == 'kt24'
-             </p>
+             end ngIf: operative.edition == 'kt24'
             </h3>
            </div>
           </div>
@@ -10534,30 +9422,22 @@
              <tr>
               <td>
                <h6>
-                <p>
-                 Weapons
-                </p>
+                Weapons
                </h6>
               </td>
               <td>
                <h6>
-                <p>
-                 ATK
-                </p>
+                ATK
                </h6>
               </td>
               <td>
                <h6>
-                <p>
-                 HIT
-                </p>
+                HIT
                </h6>
               </td>
               <td>
                <h6>
-                <p>
-                 DMG
-                </p>
+                DMG
                </h6>
               </td>
              </tr>
@@ -10579,16 +9459,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Storm Bolter
@@ -10654,16 +9525,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Nemesis Falchions
@@ -10729,16 +9591,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Nemesis Force Weapon
@@ -10804,16 +9657,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Nemesis Warding Stave
@@ -10891,9 +9735,7 @@
              Abilities
             </p>
             <h6>
-             <p>
-              Abilities
-             </p>
+             Abilities
             </h6>
             <p>
              ngRepeat: ab in operative.abilities
@@ -10972,9 +9814,7 @@
           </p>
           <div>
            <h6>
-            <p>
-             Notes
-            </p>
+            Notes
            </h6>
            <p>
            </p>
@@ -11021,9 +9861,7 @@
          </p>
          <div>
           <h2>
-           <p>
-            Grey Knight Purifier
-           </p>
+           Grey Knight Purifier
           </h2>
           <p>
            Specialisms
@@ -11087,12 +9925,8 @@
            </p>
            <div>
             <h3>
-             <p>
-              ngIf: operative.edition == 'kt21'
-             </p>
-             <p>
-              ngIf: operative.edition == 'kt24'
-             </p>
+             ngIf: operative.edition == 'kt21'
+             ngIf: operative.edition == 'kt24'
              <div>
               <p>
                Card View
@@ -11183,9 +10017,7 @@
                ngIf: settings['display'] == 'list'
               </p>
              </div>
-             <p>
-              end ngIf: operative.edition == 'kt24'
-             </p>
+             end ngIf: operative.edition == 'kt24'
             </h3>
            </div>
           </div>
@@ -11201,30 +10033,22 @@
              <tr>
               <td>
                <h6>
-                <p>
-                 Weapons
-                </p>
+                Weapons
                </h6>
               </td>
               <td>
                <h6>
-                <p>
-                 ATK
-                </p>
+                ATK
                </h6>
               </td>
               <td>
                <h6>
-                <p>
-                 HIT
-                </p>
+                HIT
                </h6>
               </td>
               <td>
                <h6>
-                <p>
-                 DMG
-                </p>
+                DMG
                </h6>
               </td>
              </tr>
@@ -11246,16 +10070,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Psychic Overload
@@ -11321,16 +10136,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Storm Bolter
@@ -11396,16 +10202,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Nemesis Falchions
@@ -11471,16 +10268,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Nemesis Force Weapon
@@ -11546,16 +10334,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Nemesis Warding Stave
@@ -11633,9 +10412,7 @@
              Abilities
             </p>
             <h6>
-             <p>
-              Abilities
-             </p>
+             Abilities
             </h6>
             <p>
              ngRepeat: ab in operative.abilities
@@ -11714,9 +10491,7 @@
           </p>
           <div>
            <h6>
-            <p>
-             Notes
-            </p>
+            Notes
            </h6>
            <p>
            </p>
@@ -11763,9 +10538,7 @@
          </p>
          <div>
           <h2>
-           <p>
-            Grey Knight Interceptor
-           </p>
+           Grey Knight Interceptor
           </h2>
           <p>
            Specialisms
@@ -11829,12 +10602,8 @@
            </p>
            <div>
             <h3>
-             <p>
-              ngIf: operative.edition == 'kt21'
-             </p>
-             <p>
-              ngIf: operative.edition == 'kt24'
-             </p>
+             ngIf: operative.edition == 'kt21'
+             ngIf: operative.edition == 'kt24'
              <div>
               <p>
                Card View
@@ -11925,9 +10694,7 @@
                ngIf: settings['display'] == 'list'
               </p>
              </div>
-             <p>
-              end ngIf: operative.edition == 'kt24'
-             </p>
+             end ngIf: operative.edition == 'kt24'
             </h3>
            </div>
           </div>
@@ -11943,30 +10710,22 @@
              <tr>
               <td>
                <h6>
-                <p>
-                 Weapons
-                </p>
+                Weapons
                </h6>
               </td>
               <td>
                <h6>
-                <p>
-                 ATK
-                </p>
+                ATK
                </h6>
               </td>
               <td>
                <h6>
-                <p>
-                 HIT
-                </p>
+                HIT
                </h6>
               </td>
               <td>
                <h6>
-                <p>
-                 DMG
-                </p>
+                DMG
                </h6>
               </td>
              </tr>
@@ -11988,16 +10747,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Storm Bolter
@@ -12063,16 +10813,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Nemesis Falchions
@@ -12138,16 +10879,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Nemesis Force Weapon
@@ -12213,16 +10945,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Nemesis Warding Stave
@@ -12300,9 +11023,7 @@
              Abilities
             </p>
             <h6>
-             <p>
-              Abilities
-             </p>
+             Abilities
             </h6>
             <p>
              ngRepeat: ab in operative.abilities
@@ -12389,9 +11110,7 @@
           </p>
           <div>
            <h6>
-            <p>
-             Notes
-            </p>
+            Notes
            </h6>
            <p>
            </p>
@@ -12438,9 +11157,7 @@
          </p>
          <div>
           <h2>
-           <p>
-            Grey Knight Purgator
-           </p>
+           Grey Knight Purgator
           </h2>
           <p>
            Specialisms
@@ -12504,12 +11221,8 @@
            </p>
            <div>
             <h3>
-             <p>
-              ngIf: operative.edition == 'kt21'
-             </p>
-             <p>
-              ngIf: operative.edition == 'kt24'
-             </p>
+             ngIf: operative.edition == 'kt21'
+             ngIf: operative.edition == 'kt24'
              <div>
               <p>
                Card View
@@ -12600,9 +11313,7 @@
                ngIf: settings['display'] == 'list'
               </p>
              </div>
-             <p>
-              end ngIf: operative.edition == 'kt24'
-             </p>
+             end ngIf: operative.edition == 'kt24'
             </h3>
            </div>
           </div>
@@ -12618,30 +11329,22 @@
              <tr>
               <td>
                <h6>
-                <p>
-                 Weapons
-                </p>
+                Weapons
                </h6>
               </td>
               <td>
                <h6>
-                <p>
-                 ATK
-                </p>
+                ATK
                </h6>
               </td>
               <td>
                <h6>
-                <p>
-                 HIT
-                </p>
+                HIT
                </h6>
               </td>
               <td>
                <h6>
-                <p>
-                 DMG
-                </p>
+                DMG
                </h6>
               </td>
              </tr>
@@ -12663,16 +11366,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Incinerator
@@ -12738,16 +11432,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Psilencer
@@ -12813,16 +11498,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Psycannon
@@ -12888,16 +11564,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Fists
@@ -12967,9 +11634,7 @@
              Abilities
             </p>
             <h6>
-             <p>
-              Abilities
-             </p>
+             Abilities
             </h6>
             <p>
              ngRepeat: ab in operative.abilities
@@ -13040,9 +11705,7 @@
           </p>
           <div>
            <h6>
-            <p>
-             Notes
-            </p>
+            Notes
            </h6>
            <p>
            </p>
@@ -13084,18 +11747,14 @@
    </div>
   </div>
   <h1>
-   <p>
-    Kill Team Composition
-   </p>
+   Kill Team Composition
    <sup>
     <i>
     </i>
    </sup>
   </h1>
   <h3>
-   <p>
-    Grey Knights
-   </p>
+   Grey Knights
    <sup>
     <i>
     </i>
@@ -13323,9 +11982,7 @@
       Strategic Ploys
      </p>
      <h3>
-      <p>
-       Strategy Ploys
-      </p>
+      Strategy Ploys
      </h3>
      <p>
       ngRepeat: ploy in killteam.ploys.strat
@@ -13336,17 +11993,13 @@
         ngIf: MODE == 'Dashboard' &amp;&amp; ploy.ploytype == 'S' &amp;&amp; ploy.factionid == dashboardroster.factionid &amp;&amp; ploy.killteamid == dashboardroster.killteamid
        </p>
        <h5>
-        <p>
-         And They Shall Know No Fear
-        </p>
+        And They Shall Know No Fear
        </h5>
        <p>
-        em class="oswald"&gt;({{ ploy.ploytype == 'S' ? 'Strategic' : 'Tactical' }} Ploy)
+        em class="oswald"&gt;({{ ploy.ploytype == 'S' ? 'Strategic' : 'Tactical' }} Ploy)&lt;/em
        </p>
        <h5>
-        <p>
-         1 CP
-        </p>
+        1 CP
        </h5>
       </div>
       <p>
@@ -13364,17 +12017,13 @@
         ngIf: MODE == 'Dashboard' &amp;&amp; ploy.ploytype == 'S' &amp;&amp; ploy.factionid == dashboardroster.factionid &amp;&amp; ploy.killteamid == dashboardroster.killteamid
        </p>
        <h5>
-        <p>
-         Focused Mind
-        </p>
+        Focused Mind
        </h5>
        <p>
-        em class="oswald"&gt;({{ ploy.ploytype == 'S' ? 'Strategic' : 'Tactical' }} Ploy)
+        em class="oswald"&gt;({{ ploy.ploytype == 'S' ? 'Strategic' : 'Tactical' }} Ploy)&lt;/em
        </p>
        <h5>
-        <p>
-         1 CP
-        </p>
+        1 CP
        </h5>
       </div>
       <p>
@@ -13392,17 +12041,13 @@
         ngIf: MODE == 'Dashboard' &amp;&amp; ploy.ploytype == 'S' &amp;&amp; ploy.factionid == dashboardroster.factionid &amp;&amp; ploy.killteamid == dashboardroster.killteamid
        </p>
        <h5>
-        <p>
-         Tide Of Celerity
-        </p>
+        Tide Of Celerity
        </h5>
        <p>
-        em class="oswald"&gt;({{ ploy.ploytype == 'S' ? 'Strategic' : 'Tactical' }} Ploy)
+        em class="oswald"&gt;({{ ploy.ploytype == 'S' ? 'Strategic' : 'Tactical' }} Ploy)&lt;/em
        </p>
        <h5>
-        <p>
-         1 CP
-        </p>
+        1 CP
        </h5>
       </div>
       <p>
@@ -13420,17 +12065,13 @@
         ngIf: MODE == 'Dashboard' &amp;&amp; ploy.ploytype == 'S' &amp;&amp; ploy.factionid == dashboardroster.factionid &amp;&amp; ploy.killteamid == dashboardroster.killteamid
        </p>
        <h5>
-        <p>
-         Tide Of Shadows
-        </p>
+        Tide Of Shadows
        </h5>
        <p>
-        em class="oswald"&gt;({{ ploy.ploytype == 'S' ? 'Strategic' : 'Tactical' }} Ploy)
+        em class="oswald"&gt;({{ ploy.ploytype == 'S' ? 'Strategic' : 'Tactical' }} Ploy)&lt;/em
        </p>
        <h5>
-        <p>
-         1 CP
-        </p>
+        1 CP
        </h5>
       </div>
       <p>
@@ -13448,9 +12089,7 @@
       Tactical Ploys
      </p>
      <h3>
-      <p>
-       Firefight Ploys
-      </p>
+      Firefight Ploys
      </h3>
      <p>
       ngRepeat: ploy in killteam.ploys.tac
@@ -13461,17 +12100,13 @@
         ngIf: MODE == 'Dashboard' &amp;&amp; ploy.ploytype == 'S' &amp;&amp; ploy.factionid == dashboardroster.factionid &amp;&amp; ploy.killteamid == dashboardroster.killteamid
        </p>
        <h5>
-        <p>
-         Mists of Deimos
-        </p>
+        Mists of Deimos
        </h5>
        <p>
-        em class="oswald"&gt;({{ ploy.ploytype == 'S' ? 'Strategic' : 'Tactical' }} Ploy)
+        em class="oswald"&gt;({{ ploy.ploytype == 'S' ? 'Strategic' : 'Tactical' }} Ploy)&lt;/em
        </p>
        <h5>
-        <p>
-         1 CP
-        </p>
+        1 CP
        </h5>
       </div>
       <p>
@@ -13489,17 +12124,13 @@
         ngIf: MODE == 'Dashboard' &amp;&amp; ploy.ploytype == 'S' &amp;&amp; ploy.factionid == dashboardroster.factionid &amp;&amp; ploy.killteamid == dashboardroster.killteamid
        </p>
        <h5>
-        <p>
-         Anathema
-        </p>
+        Anathema
        </h5>
        <p>
-        em class="oswald"&gt;({{ ploy.ploytype == 'S' ? 'Strategic' : 'Tactical' }} Ploy)
+        em class="oswald"&gt;({{ ploy.ploytype == 'S' ? 'Strategic' : 'Tactical' }} Ploy)&lt;/em
        </p>
        <h5>
-        <p>
-         1 CP
-        </p>
+        1 CP
        </h5>
       </div>
       <p>
@@ -13517,25 +12148,18 @@
         ngIf: MODE == 'Dashboard' &amp;&amp; ploy.ploytype == 'S' &amp;&amp; ploy.factionid == dashboardroster.factionid &amp;&amp; ploy.killteamid == dashboardroster.killteamid
        </p>
        <h5>
-        <p>
-         Radiant Strike
-        </p>
+        Radiant Strike
        </h5>
        <p>
-        em class="oswald"&gt;({{ ploy.ploytype == 'S' ? 'Strategic' : 'Tactical' }} Ploy)
+        em class="oswald"&gt;({{ ploy.ploytype == 'S' ? 'Strategic' : 'Tactical' }} Ploy)&lt;/em
        </p>
        <h5>
-        <p>
-         1 CP
-        </p>
+        1 CP
        </h5>
       </div>
       <p>
        <p>
-        Use this firefight ploy when a friendly GREY KNIGHT operative is performing the Fight action during an activation in which it has performed the Charge action, at the start of the Resolve Attack Dice step. Until the end of that action: Its melee weapon has the Shock weapon rule. The first time you strike during that sequence, inflict 1 additional damage (to a maximum of 7).
-       </p>
-       <p>
-        Shock: The first time you strike with a critical success in each sequence, also discard one of your opponent's unresolved normal successes (or a critical success if there are none).
+        Use this firefight ploy when a friendly GREY KNIGHT operative is performing the Fight action during an activation in which it has performed the Charge action, at the start of the Resolve Attack Dice step. Until the end of that action: Its melee weapon has the Shock weapon rule. The first time you strike during that sequence, inflict 1 additional damage (to a maximum of 7). Shock: The first time you strike with a critical success in each sequence, also discard one of your opponent's unresolved normal successes (or a critical success if there are none).
        </p>
       </p>
      </any>
@@ -13548,17 +12172,13 @@
         ngIf: MODE == 'Dashboard' &amp;&amp; ploy.ploytype == 'S' &amp;&amp; ploy.factionid == dashboardroster.factionid &amp;&amp; ploy.killteamid == dashboardroster.killteamid
        </p>
        <h5>
-        <p>
-         Transhuman Physiology
-        </p>
+        Transhuman Physiology
        </h5>
        <p>
-        em class="oswald"&gt;({{ ploy.ploytype == 'S' ? 'Strategic' : 'Tactical' }} Ploy)
+        em class="oswald"&gt;({{ ploy.ploytype == 'S' ? 'Strategic' : 'Tactical' }} Ploy)&lt;/em
        </p>
        <h5>
-        <p>
-         1 CP
-        </p>
+        1 CP
        </h5>
       </div>
       <p>
@@ -13587,17 +12207,13 @@
      </p>
      <div>
       <h5>
-       <p>
-        Hexagrammic Ward
-       </p>
+       Hexagrammic Ward
       </h5>
       <p>
        ngIf: eq.eqpts &gt; '0'
       </p>
       <h5>
-       <p>
-        2 EP
-       </p>
+       2 EP
       </h5>
       <p>
        end ngIf: eq.eqpts &gt; '0'
@@ -13627,17 +12243,13 @@
      </p>
      <div>
       <h5>
-       <p>
-        Psybolt Ammunition
-       </p>
+       Psybolt Ammunition
       </h5>
       <p>
        ngIf: eq.eqpts &gt; '0'
       </p>
       <h5>
-       <p>
-        3 EP
-       </p>
+       3 EP
       </h5>
       <p>
        end ngIf: eq.eqpts &gt; '0'
@@ -13667,17 +12279,13 @@
      </p>
      <div>
       <h5>
-       <p>
-        Sanctic Blessing
-       </p>
+       Sanctic Blessing
       </h5>
       <p>
        ngIf: eq.eqpts &gt; '0'
       </p>
       <h5>
-       <p>
-        2 EP
-       </p>
+       2 EP
       </h5>
       <p>
        end ngIf: eq.eqpts &gt; '0'
@@ -13707,9 +12315,7 @@
      </p>
      <div>
       <h5>
-       <p>
-        Purity Seals
-       </p>
+       Purity Seals
       </h5>
       <p>
        ngIf: eq.eqpts &gt; '0'
@@ -13746,18 +12352,14 @@
       ngIf: $index &gt; 0 &amp;&amp; killteam.equipments[$index].eqcategory != killteam.equipments[$index - 1].eqcategory
      </p>
      <h4>
-      <p>
-       Universal Equipment
-      </p>
+      Universal Equipment
      </h4>
      <p>
       end ngIf: $index &gt; 0 &amp;&amp; killteam.equipments[$index].eqcategory != killteam.equipments[$index - 1].eqcategory
      </p>
      <div>
       <h5>
-       <p>
-        Ammo Cache
-       </p>
+       Ammo Cache
       </h5>
       <p>
        ngIf: eq.eqpts &gt; '0'
@@ -13811,9 +12413,7 @@
      </p>
      <div>
       <h5>
-       <p>
-        Razor Wire
-       </p>
+       Razor Wire
       </h5>
       <p>
        ngIf: eq.eqpts &gt; '0'
@@ -13855,9 +12455,7 @@
      </p>
      <div>
       <h5>
-       <p>
-        Comms Device
-       </p>
+       Comms Device
       </h5>
       <p>
        ngIf: eq.eqpts &gt; '0'
@@ -13895,9 +12493,7 @@
      </p>
      <div>
       <h5>
-       <p>
-        Mines
-       </p>
+       Mines
       </h5>
       <p>
        ngIf: eq.eqpts &gt; '0'
@@ -13935,9 +12531,7 @@
      </p>
      <div>
       <h5>
-       <p>
-        Light Barricades
-       </p>
+       Light Barricades
       </h5>
       <p>
        ngIf: eq.eqpts &gt; '0'
@@ -13975,9 +12569,7 @@
      </p>
      <div>
       <h5>
-       <p>
-        Heavy Barricade
-       </p>
+       Heavy Barricade
       </h5>
       <p>
        ngIf: eq.eqpts &gt; '0'
@@ -14015,9 +12607,7 @@
      </p>
      <div>
       <h5>
-       <p>
-        Ladders
-       </p>
+       Ladders
       </h5>
       <p>
        ngIf: eq.eqpts &gt; '0'
@@ -14080,9 +12670,7 @@
      </p>
      <div>
       <h5>
-       <p>
-        Portable Barricade
-       </p>
+       Portable Barricade
       </h5>
       <p>
        ngIf: eq.eqpts &gt; '0'
@@ -14155,9 +12743,7 @@
      </p>
      <div>
       <h5>
-       <p>
-        Utility Grenade - Smoke
-       </p>
+       Utility Grenade - Smoke
       </h5>
       <p>
        ngIf: eq.eqpts &gt; '0'
@@ -14224,9 +12810,7 @@
      </p>
      <div>
       <h5>
-       <p>
-        Utility Grenade - Stun
-       </p>
+       Utility Grenade - Stun
       </h5>
       <p>
        ngIf: eq.eqpts &gt; '0'
@@ -14283,9 +12867,7 @@
      </p>
      <div>
       <h5>
-       <p>
-        Explosive Grenade - Frag
-       </p>
+       Explosive Grenade - Frag
       </h5>
       <p>
        ngIf: eq.eqpts &gt; '0'
@@ -14387,9 +12969,7 @@
      </p>
      <div>
       <h5>
-       <p>
-        Explosive Grenade - Krak
-       </p>
+       Explosive Grenade - Krak
       </h5>
       <p>
        ngIf: eq.eqpts &gt; '0'
@@ -14496,9 +13076,7 @@
      <div>
       <div>
        <h5>
-        <p>
-         Champion
-        </p>
+        Champion
        </h5>
        <em>
         <p>
@@ -14551,9 +13129,7 @@
      <div>
       <div>
        <h5>
-        <p>
-         Overrun
-        </p>
+        Overrun
        </h5>
        <em>
         <p>
@@ -14599,9 +13175,7 @@
      <div>
       <div>
        <h5>
-        <p>
-         Storm Objectives
-        </p>
+        Storm Objectives
        </h5>
        <em>
         <p>
@@ -14658,9 +13232,7 @@
      <div>
       <div>
        <h5>
-        <p>
-         Contain
-        </p>
+        Contain
        </h5>
        <em>
         <p>
@@ -14710,9 +13282,7 @@
      <div>
       <div>
        <h5>
-        <p>
-         Secure Centre
-        </p>
+        Secure Centre
        </h5>
        <em>
         <p>
@@ -14762,9 +13332,7 @@
      <div>
       <div>
        <h5>
-        <p>
-         Take Ground
-        </p>
+        Take Ground
        </h5>
        <em>
         <p>
@@ -14932,12 +13500,7 @@
               </a>
              </li>
              <p>
-              li&gt;
-              <a class="pointer dropdown-item p-1" data-bs-placement="top" data-bs-toggle="tooltip" href="/printroster.php?rid={{ myRoster.rosterid }}" target="_blank" title="Print Roster">
-               <i class="fas fa-print fa-fw">
-               </i>
-               Print Roster
-              </a>
+              li&gt;&lt;a class="pointer dropdown-item p-1" href="/printroster.php?rid={{ myRoster.rosterid }}" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" title="Print Roster"&gt;&lt;i class="fas fa-print fa-fw"&gt;&lt;/i&gt; Print Roster&lt;/a&gt;&lt;/li
              </p>
              <p>
               ngIf: MODE == 'MyRosters'
@@ -15155,12 +13718,7 @@
               </a>
              </li>
              <p>
-              li&gt;
-              <a class="pointer dropdown-item p-1" data-bs-placement="top" data-bs-toggle="tooltip" href="/printroster.php?rid={{ myRoster.rosterid }}" target="_blank" title="Print Roster">
-               <i class="fas fa-print fa-fw">
-               </i>
-               Print Roster
-              </a>
+              li&gt;&lt;a class="pointer dropdown-item p-1" href="/printroster.php?rid={{ myRoster.rosterid }}" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" title="Print Roster"&gt;&lt;i class="fas fa-print fa-fw"&gt;&lt;/i&gt; Print Roster&lt;/a&gt;&lt;/li
              </p>
              <p>
               ngIf: MODE == 'MyRosters'
@@ -15378,12 +13936,7 @@
               </a>
              </li>
              <p>
-              li&gt;
-              <a class="pointer dropdown-item p-1" data-bs-placement="top" data-bs-toggle="tooltip" href="/printroster.php?rid={{ myRoster.rosterid }}" target="_blank" title="Print Roster">
-               <i class="fas fa-print fa-fw">
-               </i>
-               Print Roster
-              </a>
+              li&gt;&lt;a class="pointer dropdown-item p-1" href="/printroster.php?rid={{ myRoster.rosterid }}" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" title="Print Roster"&gt;&lt;i class="fas fa-print fa-fw"&gt;&lt;/i&gt; Print Roster&lt;/a&gt;&lt;/li
              </p>
              <p>
               ngIf: MODE == 'MyRosters'
@@ -15590,12 +14143,7 @@
               </a>
              </li>
              <p>
-              li&gt;
-              <a class="pointer dropdown-item p-1" data-bs-placement="top" data-bs-toggle="tooltip" href="/printroster.php?rid={{ myRoster.rosterid }}" target="_blank" title="Print Roster">
-               <i class="fas fa-print fa-fw">
-               </i>
-               Print Roster
-              </a>
+              li&gt;&lt;a class="pointer dropdown-item p-1" href="/printroster.php?rid={{ myRoster.rosterid }}" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" title="Print Roster"&gt;&lt;i class="fas fa-print fa-fw"&gt;&lt;/i&gt; Print Roster&lt;/a&gt;&lt;/li
              </p>
              <p>
               ngIf: MODE == 'MyRosters'
@@ -15815,9 +14363,7 @@
   <div>
    <div>
     <h5>
-     <p>
-      Loading
-     </p>
+     Loading
     </h5>
    </div>
    <div>
@@ -15838,8 +14384,6 @@
    <div>
     <h5>
     </h5>
-    <button>
-    </button>
    </div>
    <div>
     <p>
@@ -15890,12 +14434,8 @@
     <h5>
      <i>
      </i>
-     <p>
-      Share Roster
-     </p>
+     Share Roster
     </h5>
-    <button>
-    </button>
    </div>
    <div>
     <p>
@@ -15956,12 +14496,8 @@
     <h5>
      <i>
      </i>
-     <p>
-      Share Roster Gallery
-     </p>
+     Share Roster Gallery
     </h5>
-    <button>
-    </button>
    </div>
    <div>
     <p>
@@ -15994,20 +14530,13 @@
     <h5>
      <i>
      </i>
-     <p>
-      New Roster
-     </p>
+     New Roster
     </h5>
-    <button>
-    </button>
    </div>
    <div>
     <h4>
-     <p>
-      Roster Name
-     </p>
+     Roster Name
     </h4>
-    <input/>
     <p>
      ngIf: newroster.rostername.toLowerCase().includes('angle')
     </p>
@@ -16018,9 +14547,7 @@
      ngIf: newroster.rostername.toLowerCase().includes('kinbrand')
     </p>
     <h4>
-     <p>
-      Faction
-     </p>
+     Faction
     </h4>
     <select>
      <option>
@@ -16030,9 +14557,7 @@
      </p>
     </select>
     <h4>
-     <p>
-      KillTeam
-     </p>
+     KillTeam
     </h4>
     <select>
      <option>
@@ -16043,16 +14568,6 @@
     </select>
    </div>
    <div>
-    <button>
-     <p>
-      Cancel
-     </p>
-    </button>
-    <button>
-     <p>
-      Create Roster
-     </p>
-    </button>
    </div>
   </div>
   <div>
@@ -16061,23 +14576,15 @@
      <i>
      </i>
     </h5>
-    <button>
-    </button>
    </div>
    <div>
     <h4>
-     <p>
-      Roster Name
-     </p>
+     Roster Name
     </h4>
-    <input/>
     <br/>
     <h4>
-     <p>
-      Notes
-     </p>
+     Notes
     </h4>
-    <textarea></textarea>
     <br/>
     <br/>
     <p>
@@ -16085,35 +14592,21 @@
     </p>
     <div>
      <h4>
-      <p>
-       Keyword
-      </p>
+      Keyword
      </h4>
      <em>
      </em>
      <br/>
-     <input/>
      <br/>
     </div>
     <p>
      end ngIf: getRosterCustomkeyword(rostertoedit) != ''
     </p>
-    <input/>
     <p>
      Copy portraits when imported by other users
     </p>
    </div>
    <div>
-    <button>
-     <p>
-      Cancel
-     </p>
-    </button>
-    <button>
-     <p>
-      Save
-     </p>
-    </button>
    </div>
   </div>
   <div>
@@ -16121,18 +14614,12 @@
     <h5>
      <i>
      </i>
-     <p>
-      - Narrative Info
-     </p>
+     - Narrative Info
     </h5>
-    <button>
-    </button>
    </div>
    <div>
     <h4>
-     <p>
-      Requisition Points
-     </p>
+     Requisition Points
     </h4>
     <p>
      ngIf: rostertoedit.userid == currentuser.userid
@@ -16143,35 +14630,16 @@
      ngIf: rostertoedit.userid == currentuser.userid
     </p>
     <h4>
-     <p>
-      Strategic Assets
-     </p>
+     Strategic Assets
     </h4>
-    <textarea></textarea>
     <h4>
-     <p>
-      Equipment Notes
-     </p>
+     Equipment Notes
     </h4>
-    <textarea></textarea>
     <h4>
-     <p>
-      SpecOps Notes
-     </p>
+     SpecOps Notes
     </h4>
-    <textarea></textarea>
    </div>
    <div>
-    <button>
-     <p>
-      Cancel
-     </p>
-    </button>
-    <button>
-     <p>
-      Save
-     </p>
-    </button>
    </div>
   </div>
   <div>
@@ -16179,12 +14647,8 @@
     <h5>
      <i>
      </i>
-     <p>
-      Delete Roster
-     </p>
+     Delete Roster
     </h5>
-    <button>
-    </button>
    </div>
    <div>
     <p>
@@ -16192,16 +14656,6 @@
     </p>
    </div>
    <div>
-    <button>
-     <p>
-      Cancel
-     </p>
-    </button>
-    <button>
-     <p>
-      Delete
-     </p>
-    </button>
    </div>
   </div>
   <div>
@@ -16209,12 +14663,8 @@
     <h5>
      <i>
      </i>
-     <p>
-      Add Operative to
-     </p>
+     Add Operative to
     </h5>
-    <button>
-    </button>
    </div>
    <div>
     <p>
@@ -16224,9 +14674,7 @@
      ngIf: addop.killteam.fireteams.length &gt; 1
     </p>
     <h6>
-     <p>
-      Operative
-     </p>
+     Operative
     </h6>
     <select>
      <option>
@@ -16236,9 +14684,7 @@
      </p>
     </select>
     <h6>
-     <p>
-      Operative Name
-     </p>
+     Operative Name
     </h6>
     <p>
      ngIf: settings['useoptypeasname'] == 'n'
@@ -16252,7 +14698,6 @@
      end ngIf: settings['useoptypeasname'] == 'n'
     </p>
     <br/>
-    <input/>
     <br/>
     <p>
      Characteristics/Stats
@@ -16262,16 +14707,6 @@
     </p>
    </div>
    <div>
-    <button>
-     <p>
-      Cancel
-     </p>
-    </button>
-    <button>
-     <p>
-      Add to Team
-     </p>
-    </button>
    </div>
   </div>
   <div>
@@ -16282,15 +14717,11 @@
       </i>
      </h5>
     </div>
-    <button>
-    </button>
     <br/>
    </div>
    <div>
     <h6>
-     <p>
-      Operative Name
-     </p>
+     Operative Name
     </h6>
     <p>
      ngIf: settings['useoptypeasname'] == 'n'
@@ -16304,7 +14735,6 @@
      end ngIf: settings['useoptypeasname'] == 'n'
     </p>
     <br/>
-    <input/>
     <br/>
     <p>
      Weapons List
@@ -16320,20 +14750,14 @@
      ngIf: settings['shownarrative'] == 'y' &amp;&amp; tempeditop.specialisms != ''
     </p>
     <h6>
-     <p>
-      ngIf: tempeditop.edition == 'kt21'
-     </p>
-     <p>
-      ngIf: tempeditop.edition != 'kt21'
-     </p>
+     ngIf: tempeditop.edition == 'kt21'
+     ngIf: tempeditop.edition != 'kt21'
      <span>
       <p>
        Options
       </p>
      </span>
-     <p>
-      end ngIf: tempeditop.edition != 'kt21'
-     </p>
+     end ngIf: tempeditop.edition != 'kt21'
     </h6>
     <div>
      <p>
@@ -16345,27 +14769,13 @@
     </div>
    </div>
    <div>
-    <button>
-     <p>
-      Cancel
-     </p>
-    </button>
-    <button>
-     <p>
-      Save
-     </p>
-    </button>
    </div>
   </div>
   <div>
    <div>
     <h5>
-     <p>
-      's Equipment
-     </p>
+     's Equipment
     </h5>
-    <button>
-    </button>
    </div>
    <div>
     <p>
@@ -16376,16 +14786,6 @@
     </p>
    </div>
    <div>
-    <button>
-     <p>
-      Cancel
-     </p>
-    </button>
-    <button>
-     <p>
-      Save
-     </p>
-    </button>
    </div>
   </div>
   <div>
@@ -16393,12 +14793,8 @@
     <h5>
      <i>
      </i>
-     <p>
-      Delete Operative
-     </p>
+     Delete Operative
     </h5>
-    <button>
-    </button>
    </div>
    <div>
     <p>
@@ -16406,16 +14802,6 @@
     </p>
    </div>
    <div>
-    <button>
-     <p>
-      Cancel
-     </p>
-    </button>
-    <button>
-     <p>
-      Delete
-     </p>
-    </button>
    </div>
   </div>
   <div>
@@ -16423,12 +14809,8 @@
     <h5>
      <i>
      </i>
-     <p>
-      Select Opponent Roster
-     </p>
+     Select Opponent Roster
     </h5>
-    <button>
-    </button>
    </div>
    <div>
     <div>
@@ -16439,9 +14821,7 @@
      </div>
      <div>
       <h1>
-       <p>
-        JdKdf73l
-       </p>
+       JdKdf73l
       </h1>
      </div>
     </div>
@@ -16452,21 +14832,10 @@
       </p>
      </div>
      <div>
-      <input/>
      </div>
     </div>
    </div>
    <div>
-    <button>
-     <p>
-      Cancel
-     </p>
-    </button>
-    <button>
-     <p>
-      Confirm
-     </p>
-    </button>
    </div>
   </div>
   <div>
@@ -16474,12 +14843,8 @@
     <h5>
      <i>
      </i>
-     <p>
-      Brotherhood of Psykers
-     </p>
+     Brotherhood of Psykers
     </h5>
-    <button>
-    </button>
    </div>
    <div>
     <p>
@@ -16495,8 +14860,6 @@
      <i>
      </i>
     </h5>
-    <button>
-    </button>
    </div>
    <div>
     <div>
@@ -16504,11 +14867,8 @@
     </div>
     <br/>
     <h4>
-     <p>
-      Upload New Portrait
-     </p>
+     Upload New Portrait
     </h4>
-    <input/>
     <br/>
     <em>
      <p>
@@ -16524,9 +14884,7 @@
      Please don't upload inappropriate photos. I look at every uploaded portrait and will delete suggestive, inappropriate, or offensive photos.
     </p>
     <h4>
-     <p>
-      Help
-     </p>
+     Help
     </h4>
     <div>
      <div>
@@ -16541,21 +14899,6 @@
     </div>
    </div>
    <div>
-    <button>
-     <p>
-      Cancel
-     </p>
-    </button>
-    <button>
-     <p>
-      Delete Custom Portrait
-     </p>
-    </button>
-    <button>
-     <p>
-      Save
-     </p>
-    </button>
    </div>
   </div>
   <div>
@@ -16564,14 +14907,11 @@
      <i>
      </i>
     </h5>
-    <button>
-    </button>
    </div>
    <div>
     <div>
      <img/>
     </div>
-    <input/>
     <br/>
     <em>
      <p>
@@ -16587,9 +14927,7 @@
      Please don't upload inappropriate photos. I look at every uploaded portrait and will delete suggestive, inappropriate, or offensive photos.
     </p>
     <h4>
-     <p>
-      Help
-     </p>
+     Help
     </h4>
     <div>
      <div>
@@ -16604,21 +14942,6 @@
     </div>
    </div>
    <div>
-    <button>
-     <p>
-      Cancel
-     </p>
-    </button>
-    <button>
-     <p>
-      Delete Custom Portrait
-     </p>
-    </button>
-    <button>
-     <p>
-      Save
-     </p>
-    </button>
    </div>
   </div>
   <div>
@@ -16629,8 +14952,6 @@
       </i>
      </sup>
     </h5>
-    <button>
-    </button>
    </div>
    <div>
     <p>
@@ -16677,18 +14998,14 @@
      </p>
      <div>
       <h2>
-       <p>
-        Strategic Ploys
-       </p>
+       Strategic Ploys
       </h2>
       <p>
        ngRepeat: ploy in myRoster.killteam.ploys.strat
       </p>
       <hr/>
       <h2>
-       <p>
-        Tactical Ploys
-       </p>
+       Tactical Ploys
       </h2>
       <p>
        ngRepeat: ploy in myRoster.killteam.ploys.tac
@@ -16707,18 +15024,14 @@
   </div>
   <div>
    <h2>
-    <p>
-     Strategic Ploys
-    </p>
+    Strategic Ploys
    </h2>
    <p>
     ngRepeat: ploy in myRoster.killteam.ploys.strat
    </p>
    <hr/>
    <h2>
-    <p>
-     Tactical Ploys
-    </p>
+    Tactical Ploys
    </h2>
    <p>
     ngRepeat: ploy in myRoster.killteam.ploys.tac
@@ -16727,18 +15040,12 @@
   <div>
    <div>
     <h5>
-     <p>
-      Print Roster
-     </p>
+     Print Roster
     </h5>
-    <button>
-    </button>
    </div>
    <div>
     <h2>
-     <p>
-      Print Mode
-     </p>
+     Print Mode
     </h2>
     <ul>
      <li>
@@ -16787,14 +15094,12 @@
       </a>
      </li>
     </ul>
-    <input/>
     <label>
      <p>
       Print Ploys
      </p>
     </label>
     <br/>
-    <input/>
     <label>
      <p>
       Print Equipments
@@ -16802,11 +15107,6 @@
     </label>
    </div>
    <div>
-    <button>
-     <p>
-      Close
-     </p>
-    </button>
    </div>
   </div>
   <a>
@@ -16842,12 +15142,8 @@
   <div>
    <div>
     <h5>
-     <p>
-      Install KTDash
-     </p>
+     Install KTDash
     </h5>
-    <button>
-    </button>
    </div>
    <div>
     <p>
@@ -16857,16 +15153,6 @@
     </p>
    </div>
    <div>
-    <button>
-     <p>
-      Cancel
-     </p>
-    </button>
-    <button>
-     <p>
-      Install
-     </p>
-    </button>
    </div>
   </div>
   <div>
@@ -16874,9 +15160,7 @@
     Killteam Composition
    </p>
    <h1>
-    <p>
-     Kill Team Composition
-    </p>
+    Kill Team Composition
     <sup>
      <i>
      </i>
@@ -16888,9 +15172,7 @@
     </p>
     <div>
      <h3>
-      <p>
-       Grey Knights
-      </p>
+      Grey Knights
       <sup>
        <i>
        </i>
@@ -16914,9 +15196,7 @@
          </p>
          <div>
           <h2>
-           <p>
-            Brotherhood Librarian
-           </p>
+           Brotherhood Librarian
           </h2>
           <p>
            Specialisms
@@ -16980,12 +15260,8 @@
            </p>
            <div>
             <h3>
-             <p>
-              ngIf: operative.edition == 'kt21'
-             </p>
-             <p>
-              ngIf: operative.edition == 'kt24'
-             </p>
+             ngIf: operative.edition == 'kt21'
+             ngIf: operative.edition == 'kt24'
              <div>
               <p>
                Card View
@@ -17076,9 +15352,7 @@
                ngIf: settings['display'] == 'list'
               </p>
              </div>
-             <p>
-              end ngIf: operative.edition == 'kt24'
-             </p>
+             end ngIf: operative.edition == 'kt24'
             </h3>
            </div>
           </div>
@@ -17094,30 +15368,22 @@
              <tr>
               <td>
                <h6>
-                <p>
-                 Weapons
-                </p>
+                Weapons
                </h6>
               </td>
               <td>
                <h6>
-                <p>
-                 ATK
-                </p>
+                ATK
                </h6>
               </td>
               <td>
                <h6>
-                <p>
-                 HIT
-                </p>
+                HIT
                </h6>
               </td>
               <td>
                <h6>
-                <p>
-                 DMG
-                </p>
+                DMG
                </h6>
               </td>
              </tr>
@@ -17139,16 +15405,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Storm Bolter
@@ -17214,16 +15471,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Nemesis Force Weapon
@@ -17289,16 +15537,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Nemesis Warding Stave
@@ -17376,9 +15615,7 @@
              Abilities
             </p>
             <h6>
-             <p>
-              Abilities
-             </p>
+             Abilities
             </h6>
             <p>
              ngRepeat: ab in operative.abilities
@@ -17465,9 +15702,7 @@
           </p>
           <div>
            <h6>
-            <p>
-             Notes
-            </p>
+            Notes
            </h6>
            <p>
            </p>
@@ -17514,9 +15749,7 @@
          </p>
          <div>
           <h2>
-           <p>
-            Grey Knight Justicar
-           </p>
+           Grey Knight Justicar
           </h2>
           <p>
            Specialisms
@@ -17580,12 +15813,8 @@
            </p>
            <div>
             <h3>
-             <p>
-              ngIf: operative.edition == 'kt21'
-             </p>
-             <p>
-              ngIf: operative.edition == 'kt24'
-             </p>
+             ngIf: operative.edition == 'kt21'
+             ngIf: operative.edition == 'kt24'
              <div>
               <p>
                Card View
@@ -17676,9 +15905,7 @@
                ngIf: settings['display'] == 'list'
               </p>
              </div>
-             <p>
-              end ngIf: operative.edition == 'kt24'
-             </p>
+             end ngIf: operative.edition == 'kt24'
             </h3>
            </div>
           </div>
@@ -17694,30 +15921,22 @@
              <tr>
               <td>
                <h6>
-                <p>
-                 Weapons
-                </p>
+                Weapons
                </h6>
               </td>
               <td>
                <h6>
-                <p>
-                 ATK
-                </p>
+                ATK
                </h6>
               </td>
               <td>
                <h6>
-                <p>
-                 HIT
-                </p>
+                HIT
                </h6>
               </td>
               <td>
                <h6>
-                <p>
-                 DMG
-                </p>
+                DMG
                </h6>
               </td>
              </tr>
@@ -17739,16 +15958,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Storm Bolter
@@ -17814,16 +16024,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Nemesis Daemon Hammer
@@ -17889,16 +16090,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Nemesis Falchions
@@ -17964,16 +16156,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Nemesis Force Weapon
@@ -18039,16 +16222,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Nemesis Warding Stave
@@ -18126,9 +16300,7 @@
              Abilities
             </p>
             <h6>
-             <p>
-              Abilities
-             </p>
+             Abilities
             </h6>
             <p>
              ngRepeat: ab in operative.abilities
@@ -18207,9 +16379,7 @@
           </p>
           <div>
            <h6>
-            <p>
-             Notes
-            </p>
+            Notes
            </h6>
            <p>
            </p>
@@ -18256,9 +16426,7 @@
          </p>
          <div>
           <h2>
-           <p>
-            Grey Knight Warrior
-           </p>
+           Grey Knight Warrior
           </h2>
           <p>
            Specialisms
@@ -18322,12 +16490,8 @@
            </p>
            <div>
             <h3>
-             <p>
-              ngIf: operative.edition == 'kt21'
-             </p>
-             <p>
-              ngIf: operative.edition == 'kt24'
-             </p>
+             ngIf: operative.edition == 'kt21'
+             ngIf: operative.edition == 'kt24'
              <div>
               <p>
                Card View
@@ -18418,9 +16582,7 @@
                ngIf: settings['display'] == 'list'
               </p>
              </div>
-             <p>
-              end ngIf: operative.edition == 'kt24'
-             </p>
+             end ngIf: operative.edition == 'kt24'
             </h3>
            </div>
           </div>
@@ -18436,30 +16598,22 @@
              <tr>
               <td>
                <h6>
-                <p>
-                 Weapons
-                </p>
+                Weapons
                </h6>
               </td>
               <td>
                <h6>
-                <p>
-                 ATK
-                </p>
+                ATK
                </h6>
               </td>
               <td>
                <h6>
-                <p>
-                 HIT
-                </p>
+                HIT
                </h6>
               </td>
               <td>
                <h6>
-                <p>
-                 DMG
-                </p>
+                DMG
                </h6>
               </td>
              </tr>
@@ -18481,16 +16635,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Storm Bolter
@@ -18556,16 +16701,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Nemesis Falchions
@@ -18631,16 +16767,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Nemesis Force Weapon
@@ -18706,16 +16833,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Nemesis Warding Stave
@@ -18793,9 +16911,7 @@
              Abilities
             </p>
             <h6>
-             <p>
-              Abilities
-             </p>
+             Abilities
             </h6>
             <p>
              ngRepeat: ab in operative.abilities
@@ -18874,9 +16990,7 @@
           </p>
           <div>
            <h6>
-            <p>
-             Notes
-            </p>
+            Notes
            </h6>
            <p>
            </p>
@@ -18923,9 +17037,7 @@
          </p>
          <div>
           <h2>
-           <p>
-            Grey Knight Purifier
-           </p>
+           Grey Knight Purifier
           </h2>
           <p>
            Specialisms
@@ -18989,12 +17101,8 @@
            </p>
            <div>
             <h3>
-             <p>
-              ngIf: operative.edition == 'kt21'
-             </p>
-             <p>
-              ngIf: operative.edition == 'kt24'
-             </p>
+             ngIf: operative.edition == 'kt21'
+             ngIf: operative.edition == 'kt24'
              <div>
               <p>
                Card View
@@ -19085,9 +17193,7 @@
                ngIf: settings['display'] == 'list'
               </p>
              </div>
-             <p>
-              end ngIf: operative.edition == 'kt24'
-             </p>
+             end ngIf: operative.edition == 'kt24'
             </h3>
            </div>
           </div>
@@ -19103,30 +17209,22 @@
              <tr>
               <td>
                <h6>
-                <p>
-                 Weapons
-                </p>
+                Weapons
                </h6>
               </td>
               <td>
                <h6>
-                <p>
-                 ATK
-                </p>
+                ATK
                </h6>
               </td>
               <td>
                <h6>
-                <p>
-                 HIT
-                </p>
+                HIT
                </h6>
               </td>
               <td>
                <h6>
-                <p>
-                 DMG
-                </p>
+                DMG
                </h6>
               </td>
              </tr>
@@ -19148,16 +17246,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Psychic Overload
@@ -19223,16 +17312,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Storm Bolter
@@ -19298,16 +17378,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Nemesis Falchions
@@ -19373,16 +17444,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Nemesis Force Weapon
@@ -19448,16 +17510,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Nemesis Warding Stave
@@ -19535,9 +17588,7 @@
              Abilities
             </p>
             <h6>
-             <p>
-              Abilities
-             </p>
+             Abilities
             </h6>
             <p>
              ngRepeat: ab in operative.abilities
@@ -19616,9 +17667,7 @@
           </p>
           <div>
            <h6>
-            <p>
-             Notes
-            </p>
+            Notes
            </h6>
            <p>
            </p>
@@ -19665,9 +17714,7 @@
          </p>
          <div>
           <h2>
-           <p>
-            Grey Knight Interceptor
-           </p>
+           Grey Knight Interceptor
           </h2>
           <p>
            Specialisms
@@ -19731,12 +17778,8 @@
            </p>
            <div>
             <h3>
-             <p>
-              ngIf: operative.edition == 'kt21'
-             </p>
-             <p>
-              ngIf: operative.edition == 'kt24'
-             </p>
+             ngIf: operative.edition == 'kt21'
+             ngIf: operative.edition == 'kt24'
              <div>
               <p>
                Card View
@@ -19827,9 +17870,7 @@
                ngIf: settings['display'] == 'list'
               </p>
              </div>
-             <p>
-              end ngIf: operative.edition == 'kt24'
-             </p>
+             end ngIf: operative.edition == 'kt24'
             </h3>
            </div>
           </div>
@@ -19845,30 +17886,22 @@
              <tr>
               <td>
                <h6>
-                <p>
-                 Weapons
-                </p>
+                Weapons
                </h6>
               </td>
               <td>
                <h6>
-                <p>
-                 ATK
-                </p>
+                ATK
                </h6>
               </td>
               <td>
                <h6>
-                <p>
-                 HIT
-                </p>
+                HIT
                </h6>
               </td>
               <td>
                <h6>
-                <p>
-                 DMG
-                </p>
+                DMG
                </h6>
               </td>
              </tr>
@@ -19890,16 +17923,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Storm Bolter
@@ -19965,16 +17989,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Nemesis Falchions
@@ -20040,16 +18055,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Nemesis Force Weapon
@@ -20115,16 +18121,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Nemesis Warding Stave
@@ -20202,9 +18199,7 @@
              Abilities
             </p>
             <h6>
-             <p>
-              Abilities
-             </p>
+             Abilities
             </h6>
             <p>
              ngRepeat: ab in operative.abilities
@@ -20291,9 +18286,7 @@
           </p>
           <div>
            <h6>
-            <p>
-             Notes
-            </p>
+            Notes
            </h6>
            <p>
            </p>
@@ -20340,9 +18333,7 @@
          </p>
          <div>
           <h2>
-           <p>
-            Grey Knight Purgator
-           </p>
+           Grey Knight Purgator
           </h2>
           <p>
            Specialisms
@@ -20406,12 +18397,8 @@
            </p>
            <div>
             <h3>
-             <p>
-              ngIf: operative.edition == 'kt21'
-             </p>
-             <p>
-              ngIf: operative.edition == 'kt24'
-             </p>
+             ngIf: operative.edition == 'kt21'
+             ngIf: operative.edition == 'kt24'
              <div>
               <p>
                Card View
@@ -20502,9 +18489,7 @@
                ngIf: settings['display'] == 'list'
               </p>
              </div>
-             <p>
-              end ngIf: operative.edition == 'kt24'
-             </p>
+             end ngIf: operative.edition == 'kt24'
             </h3>
            </div>
           </div>
@@ -20520,30 +18505,22 @@
              <tr>
               <td>
                <h6>
-                <p>
-                 Weapons
-                </p>
+                Weapons
                </h6>
               </td>
               <td>
                <h6>
-                <p>
-                 ATK
-                </p>
+                ATK
                </h6>
               </td>
               <td>
                <h6>
-                <p>
-                 HIT
-                </p>
+                HIT
                </h6>
               </td>
               <td>
                <h6>
-                <p>
-                 DMG
-                </p>
+                DMG
                </h6>
               </td>
              </tr>
@@ -20565,16 +18542,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Incinerator
@@ -20640,16 +18608,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Psilencer
@@ -20715,16 +18674,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Psycannon
@@ -20790,16 +18740,7 @@
               <td>
                <img/>
                <p>
-                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt;
-                <any ng-switch-when="R">
-                 ⊕
-                </any>
-                <any ng-switch-when="M">
-                 ⚔
-                </any>
-                <any ng-switch-default="">
-                 ⛭
-                </any>
+                ANY ng-switch="weapon.weptype" class="fas fa-fw"&gt; &lt;ANY ng-switch-when="R"&gt;&amp;#x2295;&lt;/ANY&gt; &lt;ANY ng-switch-when="M"&gt;&amp;#x2694;&lt;/ANY&gt; &lt;ANY ng-switch-default&gt;&amp;#x26ED;&lt;/ANY&gt; &lt;/ANY
                </p>
                <p>
                 Fists
@@ -20869,9 +18810,7 @@
              Abilities
             </p>
             <h6>
-             <p>
-              Abilities
-             </p>
+             Abilities
             </h6>
             <p>
              ngRepeat: ab in operative.abilities
@@ -20942,9 +18881,7 @@
           </p>
           <div>
            <h6>
-            <p>
-             Notes
-            </p>
+            Notes
            </h6>
            <p>
            </p>
@@ -20986,18 +18923,14 @@
    </div>
   </div>
   <h1>
-   <p>
-    Kill Team Composition
-   </p>
+   Kill Team Composition
    <sup>
     <i>
     </i>
    </sup>
   </h1>
   <h3>
-   <p>
-    Grey Knights
-   </p>
+   Grey Knights
    <sup>
     <i>
     </i>
@@ -21225,9 +19158,7 @@
       Strategic Ploys
      </p>
      <h3>
-      <p>
-       Strategy Ploys
-      </p>
+      Strategy Ploys
      </h3>
      <p>
       ngRepeat: ploy in killteam.ploys.strat
@@ -21238,17 +19169,13 @@
         ngIf: MODE == 'Dashboard' &amp;&amp; ploy.ploytype == 'S' &amp;&amp; ploy.factionid == dashboardroster.factionid &amp;&amp; ploy.killteamid == dashboardroster.killteamid
        </p>
        <h5>
-        <p>
-         And They Shall Know No Fear
-        </p>
+        And They Shall Know No Fear
        </h5>
        <p>
-        em class="oswald"&gt;({{ ploy.ploytype == 'S' ? 'Strategic' : 'Tactical' }} Ploy)
+        em class="oswald"&gt;({{ ploy.ploytype == 'S' ? 'Strategic' : 'Tactical' }} Ploy)&lt;/em
        </p>
        <h5>
-        <p>
-         1 CP
-        </p>
+        1 CP
        </h5>
       </div>
       <p>
@@ -21266,17 +19193,13 @@
         ngIf: MODE == 'Dashboard' &amp;&amp; ploy.ploytype == 'S' &amp;&amp; ploy.factionid == dashboardroster.factionid &amp;&amp; ploy.killteamid == dashboardroster.killteamid
        </p>
        <h5>
-        <p>
-         Focused Mind
-        </p>
+        Focused Mind
        </h5>
        <p>
-        em class="oswald"&gt;({{ ploy.ploytype == 'S' ? 'Strategic' : 'Tactical' }} Ploy)
+        em class="oswald"&gt;({{ ploy.ploytype == 'S' ? 'Strategic' : 'Tactical' }} Ploy)&lt;/em
        </p>
        <h5>
-        <p>
-         1 CP
-        </p>
+        1 CP
        </h5>
       </div>
       <p>
@@ -21294,17 +19217,13 @@
         ngIf: MODE == 'Dashboard' &amp;&amp; ploy.ploytype == 'S' &amp;&amp; ploy.factionid == dashboardroster.factionid &amp;&amp; ploy.killteamid == dashboardroster.killteamid
        </p>
        <h5>
-        <p>
-         Tide Of Celerity
-        </p>
+        Tide Of Celerity
        </h5>
        <p>
-        em class="oswald"&gt;({{ ploy.ploytype == 'S' ? 'Strategic' : 'Tactical' }} Ploy)
+        em class="oswald"&gt;({{ ploy.ploytype == 'S' ? 'Strategic' : 'Tactical' }} Ploy)&lt;/em
        </p>
        <h5>
-        <p>
-         1 CP
-        </p>
+        1 CP
        </h5>
       </div>
       <p>
@@ -21322,17 +19241,13 @@
         ngIf: MODE == 'Dashboard' &amp;&amp; ploy.ploytype == 'S' &amp;&amp; ploy.factionid == dashboardroster.factionid &amp;&amp; ploy.killteamid == dashboardroster.killteamid
        </p>
        <h5>
-        <p>
-         Tide Of Shadows
-        </p>
+        Tide Of Shadows
        </h5>
        <p>
-        em class="oswald"&gt;({{ ploy.ploytype == 'S' ? 'Strategic' : 'Tactical' }} Ploy)
+        em class="oswald"&gt;({{ ploy.ploytype == 'S' ? 'Strategic' : 'Tactical' }} Ploy)&lt;/em
        </p>
        <h5>
-        <p>
-         1 CP
-        </p>
+        1 CP
        </h5>
       </div>
       <p>
@@ -21350,9 +19265,7 @@
       Tactical Ploys
      </p>
      <h3>
-      <p>
-       Firefight Ploys
-      </p>
+      Firefight Ploys
      </h3>
      <p>
       ngRepeat: ploy in killteam.ploys.tac
@@ -21363,17 +19276,13 @@
         ngIf: MODE == 'Dashboard' &amp;&amp; ploy.ploytype == 'S' &amp;&amp; ploy.factionid == dashboardroster.factionid &amp;&amp; ploy.killteamid == dashboardroster.killteamid
        </p>
        <h5>
-        <p>
-         Mists of Deimos
-        </p>
+        Mists of Deimos
        </h5>
        <p>
-        em class="oswald"&gt;({{ ploy.ploytype == 'S' ? 'Strategic' : 'Tactical' }} Ploy)
+        em class="oswald"&gt;({{ ploy.ploytype == 'S' ? 'Strategic' : 'Tactical' }} Ploy)&lt;/em
        </p>
        <h5>
-        <p>
-         1 CP
-        </p>
+        1 CP
        </h5>
       </div>
       <p>
@@ -21391,17 +19300,13 @@
         ngIf: MODE == 'Dashboard' &amp;&amp; ploy.ploytype == 'S' &amp;&amp; ploy.factionid == dashboardroster.factionid &amp;&amp; ploy.killteamid == dashboardroster.killteamid
        </p>
        <h5>
-        <p>
-         Anathema
-        </p>
+        Anathema
        </h5>
        <p>
-        em class="oswald"&gt;({{ ploy.ploytype == 'S' ? 'Strategic' : 'Tactical' }} Ploy)
+        em class="oswald"&gt;({{ ploy.ploytype == 'S' ? 'Strategic' : 'Tactical' }} Ploy)&lt;/em
        </p>
        <h5>
-        <p>
-         1 CP
-        </p>
+        1 CP
        </h5>
       </div>
       <p>
@@ -21419,25 +19324,18 @@
         ngIf: MODE == 'Dashboard' &amp;&amp; ploy.ploytype == 'S' &amp;&amp; ploy.factionid == dashboardroster.factionid &amp;&amp; ploy.killteamid == dashboardroster.killteamid
        </p>
        <h5>
-        <p>
-         Radiant Strike
-        </p>
+        Radiant Strike
        </h5>
        <p>
-        em class="oswald"&gt;({{ ploy.ploytype == 'S' ? 'Strategic' : 'Tactical' }} Ploy)
+        em class="oswald"&gt;({{ ploy.ploytype == 'S' ? 'Strategic' : 'Tactical' }} Ploy)&lt;/em
        </p>
        <h5>
-        <p>
-         1 CP
-        </p>
+        1 CP
        </h5>
       </div>
       <p>
        <p>
-        Use this firefight ploy when a friendly GREY KNIGHT operative is performing the Fight action during an activation in which it has performed the Charge action, at the start of the Resolve Attack Dice step. Until the end of that action: Its melee weapon has the Shock weapon rule. The first time you strike during that sequence, inflict 1 additional damage (to a maximum of 7).
-       </p>
-       <p>
-        Shock: The first time you strike with a critical success in each sequence, also discard one of your opponent's unresolved normal successes (or a critical success if there are none).
+        Use this firefight ploy when a friendly GREY KNIGHT operative is performing the Fight action during an activation in which it has performed the Charge action, at the start of the Resolve Attack Dice step. Until the end of that action: Its melee weapon has the Shock weapon rule. The first time you strike during that sequence, inflict 1 additional damage (to a maximum of 7). Shock: The first time you strike with a critical success in each sequence, also discard one of your opponent's unresolved normal successes (or a critical success if there are none).
        </p>
       </p>
      </any>
@@ -21450,17 +19348,13 @@
         ngIf: MODE == 'Dashboard' &amp;&amp; ploy.ploytype == 'S' &amp;&amp; ploy.factionid == dashboardroster.factionid &amp;&amp; ploy.killteamid == dashboardroster.killteamid
        </p>
        <h5>
-        <p>
-         Transhuman Physiology
-        </p>
+        Transhuman Physiology
        </h5>
        <p>
-        em class="oswald"&gt;({{ ploy.ploytype == 'S' ? 'Strategic' : 'Tactical' }} Ploy)
+        em class="oswald"&gt;({{ ploy.ploytype == 'S' ? 'Strategic' : 'Tactical' }} Ploy)&lt;/em
        </p>
        <h5>
-        <p>
-         1 CP
-        </p>
+        1 CP
        </h5>
       </div>
       <p>
@@ -21489,17 +19383,13 @@
      </p>
      <div>
       <h5>
-       <p>
-        Hexagrammic Ward
-       </p>
+       Hexagrammic Ward
       </h5>
       <p>
        ngIf: eq.eqpts &gt; '0'
       </p>
       <h5>
-       <p>
-        2 EP
-       </p>
+       2 EP
       </h5>
       <p>
        end ngIf: eq.eqpts &gt; '0'
@@ -21529,17 +19419,13 @@
      </p>
      <div>
       <h5>
-       <p>
-        Psybolt Ammunition
-       </p>
+       Psybolt Ammunition
       </h5>
       <p>
        ngIf: eq.eqpts &gt; '0'
       </p>
       <h5>
-       <p>
-        3 EP
-       </p>
+       3 EP
       </h5>
       <p>
        end ngIf: eq.eqpts &gt; '0'
@@ -21569,17 +19455,13 @@
      </p>
      <div>
       <h5>
-       <p>
-        Sanctic Blessing
-       </p>
+       Sanctic Blessing
       </h5>
       <p>
        ngIf: eq.eqpts &gt; '0'
       </p>
       <h5>
-       <p>
-        2 EP
-       </p>
+       2 EP
       </h5>
       <p>
        end ngIf: eq.eqpts &gt; '0'
@@ -21609,9 +19491,7 @@
      </p>
      <div>
       <h5>
-       <p>
-        Purity Seals
-       </p>
+       Purity Seals
       </h5>
       <p>
        ngIf: eq.eqpts &gt; '0'
@@ -21648,18 +19528,14 @@
       ngIf: $index &gt; 0 &amp;&amp; killteam.equipments[$index].eqcategory != killteam.equipments[$index - 1].eqcategory
      </p>
      <h4>
-      <p>
-       Universal Equipment
-      </p>
+      Universal Equipment
      </h4>
      <p>
       end ngIf: $index &gt; 0 &amp;&amp; killteam.equipments[$index].eqcategory != killteam.equipments[$index - 1].eqcategory
      </p>
      <div>
       <h5>
-       <p>
-        Ammo Cache
-       </p>
+       Ammo Cache
       </h5>
       <p>
        ngIf: eq.eqpts &gt; '0'
@@ -21713,9 +19589,7 @@
      </p>
      <div>
       <h5>
-       <p>
-        Razor Wire
-       </p>
+       Razor Wire
       </h5>
       <p>
        ngIf: eq.eqpts &gt; '0'
@@ -21757,9 +19631,7 @@
      </p>
      <div>
       <h5>
-       <p>
-        Comms Device
-       </p>
+       Comms Device
       </h5>
       <p>
        ngIf: eq.eqpts &gt; '0'
@@ -21797,9 +19669,7 @@
      </p>
      <div>
       <h5>
-       <p>
-        Mines
-       </p>
+       Mines
       </h5>
       <p>
        ngIf: eq.eqpts &gt; '0'
@@ -21837,9 +19707,7 @@
      </p>
      <div>
       <h5>
-       <p>
-        Light Barricades
-       </p>
+       Light Barricades
       </h5>
       <p>
        ngIf: eq.eqpts &gt; '0'
@@ -21877,9 +19745,7 @@
      </p>
      <div>
       <h5>
-       <p>
-        Heavy Barricade
-       </p>
+       Heavy Barricade
       </h5>
       <p>
        ngIf: eq.eqpts &gt; '0'
@@ -21917,9 +19783,7 @@
      </p>
      <div>
       <h5>
-       <p>
-        Ladders
-       </p>
+       Ladders
       </h5>
       <p>
        ngIf: eq.eqpts &gt; '0'
@@ -21982,9 +19846,7 @@
      </p>
      <div>
       <h5>
-       <p>
-        Portable Barricade
-       </p>
+       Portable Barricade
       </h5>
       <p>
        ngIf: eq.eqpts &gt; '0'
@@ -22057,9 +19919,7 @@
      </p>
      <div>
       <h5>
-       <p>
-        Utility Grenade - Smoke
-       </p>
+       Utility Grenade - Smoke
       </h5>
       <p>
        ngIf: eq.eqpts &gt; '0'
@@ -22126,9 +19986,7 @@
      </p>
      <div>
       <h5>
-       <p>
-        Utility Grenade - Stun
-       </p>
+       Utility Grenade - Stun
       </h5>
       <p>
        ngIf: eq.eqpts &gt; '0'
@@ -22185,9 +20043,7 @@
      </p>
      <div>
       <h5>
-       <p>
-        Explosive Grenade - Frag
-       </p>
+       Explosive Grenade - Frag
       </h5>
       <p>
        ngIf: eq.eqpts &gt; '0'
@@ -22289,9 +20145,7 @@
      </p>
      <div>
       <h5>
-       <p>
-        Explosive Grenade - Krak
-       </p>
+       Explosive Grenade - Krak
       </h5>
       <p>
        ngIf: eq.eqpts &gt; '0'
@@ -22398,9 +20252,7 @@
      <div>
       <div>
        <h5>
-        <p>
-         Champion
-        </p>
+        Champion
        </h5>
        <em>
         <p>
@@ -22453,9 +20305,7 @@
      <div>
       <div>
        <h5>
-        <p>
-         Overrun
-        </p>
+        Overrun
        </h5>
        <em>
         <p>
@@ -22501,9 +20351,7 @@
      <div>
       <div>
        <h5>
-        <p>
-         Storm Objectives
-        </p>
+        Storm Objectives
        </h5>
        <em>
         <p>
@@ -22560,9 +20408,7 @@
      <div>
       <div>
        <h5>
-        <p>
-         Contain
-        </p>
+        Contain
        </h5>
        <em>
         <p>
@@ -22612,9 +20458,7 @@
      <div>
       <div>
        <h5>
-        <p>
-         Secure Centre
-        </p>
+        Secure Centre
        </h5>
        <em>
         <p>
@@ -22664,9 +20508,7 @@
      <div>
       <div>
        <h5>
-        <p>
-         Take Ground
-        </p>
+        Take Ground
        </h5>
        <em>
         <p>
@@ -22834,12 +20676,7 @@
               </a>
              </li>
              <p>
-              li&gt;
-              <a class="pointer dropdown-item p-1" data-bs-placement="top" data-bs-toggle="tooltip" href="/printroster.php?rid={{ myRoster.rosterid }}" target="_blank" title="Print Roster">
-               <i class="fas fa-print fa-fw">
-               </i>
-               Print Roster
-              </a>
+              li&gt;&lt;a class="pointer dropdown-item p-1" href="/printroster.php?rid={{ myRoster.rosterid }}" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" title="Print Roster"&gt;&lt;i class="fas fa-print fa-fw"&gt;&lt;/i&gt; Print Roster&lt;/a&gt;&lt;/li
              </p>
              <p>
               ngIf: MODE == 'MyRosters'
@@ -23057,12 +20894,7 @@
               </a>
              </li>
              <p>
-              li&gt;
-              <a class="pointer dropdown-item p-1" data-bs-placement="top" data-bs-toggle="tooltip" href="/printroster.php?rid={{ myRoster.rosterid }}" target="_blank" title="Print Roster">
-               <i class="fas fa-print fa-fw">
-               </i>
-               Print Roster
-              </a>
+              li&gt;&lt;a class="pointer dropdown-item p-1" href="/printroster.php?rid={{ myRoster.rosterid }}" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" title="Print Roster"&gt;&lt;i class="fas fa-print fa-fw"&gt;&lt;/i&gt; Print Roster&lt;/a&gt;&lt;/li
              </p>
              <p>
               ngIf: MODE == 'MyRosters'
@@ -23280,12 +21112,7 @@
               </a>
              </li>
              <p>
-              li&gt;
-              <a class="pointer dropdown-item p-1" data-bs-placement="top" data-bs-toggle="tooltip" href="/printroster.php?rid={{ myRoster.rosterid }}" target="_blank" title="Print Roster">
-               <i class="fas fa-print fa-fw">
-               </i>
-               Print Roster
-              </a>
+              li&gt;&lt;a class="pointer dropdown-item p-1" href="/printroster.php?rid={{ myRoster.rosterid }}" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" title="Print Roster"&gt;&lt;i class="fas fa-print fa-fw"&gt;&lt;/i&gt; Print Roster&lt;/a&gt;&lt;/li
              </p>
              <p>
               ngIf: MODE == 'MyRosters'
@@ -23492,12 +21319,7 @@
               </a>
              </li>
              <p>
-              li&gt;
-              <a class="pointer dropdown-item p-1" data-bs-placement="top" data-bs-toggle="tooltip" href="/printroster.php?rid={{ myRoster.rosterid }}" target="_blank" title="Print Roster">
-               <i class="fas fa-print fa-fw">
-               </i>
-               Print Roster
-              </a>
+              li&gt;&lt;a class="pointer dropdown-item p-1" href="/printroster.php?rid={{ myRoster.rosterid }}" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" title="Print Roster"&gt;&lt;i class="fas fa-print fa-fw"&gt;&lt;/i&gt; Print Roster&lt;/a&gt;&lt;/li
              </p>
              <p>
               ngIf: MODE == 'MyRosters'

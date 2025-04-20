@@ -1,28 +1,21 @@
 from bs4 import BeautifulSoup, Tag, Comment, NavigableString
 import re
 
+# Tags that should be excluded from export even if class matches
+blocked_tags = ['button','input','textarea']
+
 # --- TEXT CLEANUP FUNCTION --------------------------------------------------
 
 def clean_text(text):
     """
     Clean and normalize text by:
-    - Splitting on multiple newlines to create paragraphs
-    - Normalizing whitespace within each paragraph
-    - Wrapping each paragraph in a <p> tag
+    - Removing leading/trailing whitespace
+    - Replacing any sequence of whitespace (tabs, newlines, multiple spaces) with a single space
     """
     if not text:
         return ''
+    return re.sub(r'\s+', ' ', text).strip()
 
-    # Split text into paragraphs based on 2+ newlines
-    paragraphs = re.split(r'\n{2,}', text)
-
-    cleaned_paragraphs = []
-    for para in paragraphs:
-        cleaned = re.sub(r'\s+', ' ', para).strip()
-        if cleaned:
-            cleaned_paragraphs.append(f'<p>{cleaned}</p>')
-
-    return ''.join(cleaned_paragraphs)
 
 
 
@@ -33,30 +26,43 @@ def clean_to_div_tree(element, soup):
     Recursively convert an HTML element into a cleaned structure that:
     - Preserves original tag types (h2, li, ul, etc.)
     - Removes all attributes (class, id, etc.)
-    - Converts raw text into <p> tags for paragraphs
-    - Recursively processes children
+    - Converts raw text into <p> tags for paragraphs (unless inside <h1>-<h6>)
+    - Skips any tags listed in `blocked_tags`
+    - Recursively processes children and builds the cleaned output
     """
 
-    # Create a new tag using the same name as the original (e.g., 'h2', 'ul', 'li')
+    # Create a new tag using the same name as the original (e.g., 'div', 'h2', etc.)
     clean_tag = soup.new_tag(element.name)
 
-    # Go through each child node of this element
+    # Determine whether this is a heading tag (h1–h6)
+    is_heading = element.name in ['h1', 'h2', 'h3', 'h4', 'h5', 'h6']
+
     for child in element.children:
 
-        # If it's a raw text node (NavigableString), clean and wrap it in <p>
+        # Case 1: Raw text
         if isinstance(child, str):
             cleaned = clean_text(child)
             if cleaned:
-                # Parse the cleaned string so HTML tags like <p> are kept as real tags
-                parsed = BeautifulSoup(cleaned, 'html.parser')
-                clean_tag.append(parsed)
+                if is_heading:
+                    clean_tag.append(cleaned)
+                else:
+                    # Wrap cleaned text in a real <p> tag
+                    p_tag = soup.new_tag("p")
+                    p_tag.string = cleaned
+                    clean_tag.append(p_tag)
 
-        # If it's an HTML tag (e.g., <a>, <span>, <div>, etc.), process recursively
+        # Case 2: Nested tag
         elif isinstance(child, Tag):
+            if child.name in blocked_tags:
+                continue
             cleaned_child = clean_to_div_tree(child, soup)
             clean_tag.append(cleaned_child)
 
     return clean_tag
+
+
+
+
 
 
 
@@ -87,6 +93,10 @@ def extract_clean_divs(input_html_path, class_names, output_html_path):
         ]
 
         for el in elements:
+            # Skip blocked tags (e.g., <button>, <script>, etc.)
+            if el.name in blocked_tags:
+                continue
+
             # Skip if there's no visible text
             has_visible_text = any(
                 isinstance(child, NavigableString) and not isinstance(child, Comment) and child.strip()
