@@ -12,6 +12,13 @@ BLACKLIST_FIELDS = {
     "isselected", "wepid", "wepseq", "eqtype", "weapon", "name", "profileid"
 }
 
+H1_HEADERS = {
+    "ploys": "Ploys",
+    "equipments": "Equipment List",
+    "tacops": "Tactical Objectives",
+    # Add more if needed
+}
+
 COLUMN_CONFIG = {
     "strat": [
         ("ployname", "Name", "w20"),       # Short name
@@ -32,8 +39,8 @@ COLUMN_CONFIG = {
         ("description", "Description", "w75")
     ],
     "operatives_abilities": [              # Faction Rules
-        ("title", "Title", "w20"),         # Often a short phrase
-        ("description", "Description", "w80")
+        ("title", "Title", "w10"),         # Often a short phrase
+        ("description", "Description", "w90")
     ],
     "weapons": [
         ("wepname", "Weapon", "w15"),      # Longer names like "Shuriken Catapult"
@@ -41,8 +48,8 @@ COLUMN_CONFIG = {
         ("profiles", "Profiles", "w75")    # Table goes here, needs width
     ],
     "abilities": [
-        ("title", "Title", "w20"),
-        ("description", "Description", "w80")
+        ("title", "Title", "w10"),
+        ("description", "Description", "w90")
     ]
 }
 
@@ -246,8 +253,12 @@ for key in RENDER_ORDER:
     value = data.get(key)
     if not value:
         continue
+
+    # Insert a custom <h1> header if this key has one
+    if key in H1_HEADERS:
+        html_parts.append(f"<h1>{escape(H1_HEADERS[key])}</h1>")
+
     if key == "fireteams_operatives":
-        html_parts.append(f"<h1>{title_for(key)}</h1>")
         html_parts.append(render_operatives(value))
     elif isinstance(value, list):
         html_parts.append(render_table(key, value))
@@ -260,6 +271,7 @@ for key in RENDER_ORDER:
     else:
         if not should_skip_key(key):
             html_parts.append(render_value(key, value))
+
 
 # === FINALIZE OUTPUT ===
 
