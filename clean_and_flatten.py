@@ -82,8 +82,7 @@ keys_to_ignore = ["rosters"]
 # Nested keys to flatten recursively
 flatten_targets = {
     "operatives": ["abilities", "weapons", "uniqueactions"],
-    "ploys": ["strat"],
-    "ploys": ["tac"]
+    "fireteams": ["operatives"]
 }
 
 # === Load original JSON ===
