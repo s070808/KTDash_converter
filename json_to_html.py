@@ -9,7 +9,8 @@ BLACKLIST_FIELDS = {
     "factionid", "killteamid", "ployid", "ploytype", "eqcategory", "eqid",
     "eqvar1", "eqvar2", "eqvar3", "eqvar4", "fireteamid", "opid", "eqpts",
     "eqseq", "edition", "tacopid", "tacopseq", "abilityid", "isdefault",
-    "isselected", "wepid", "wepseq", "eqtype", "weapon", "eqtype"
+    "isselected", "wepid", "wepseq", "eqtype", "weapon", "eqtype",
+    "factionid","fireteamid","killteamid","name","opid","profileid","wepid"
 }
 COLUMN_CONFIG = {
     "strat": [("ployname", "Name"), ("CP", "CP"), ("description", "Description")],
@@ -17,6 +18,8 @@ COLUMN_CONFIG = {
     "equipments": [("eqname", "Name"), ("eqdescription", "Description")],
     "tacops": [("title", "Title"), ("description", "Description")],
     "operatives_abilities": [("title", "Title"), ("description", "Description")],
+    "weapons": [("wepname", "Weapon"), ("weptype", "Ranged/Melee"), ("profiles", "Profiles")],
+    "abilities": [("title", "Title"), ("description", "Description")],
 
 }
 
@@ -36,8 +39,11 @@ TITLE_OVERRIDES = {
     "tacops": "TacOps",
     "operatives_abilities": "Faction Rules",
     "operatives_uniqueactions": "Unique Actions for Operatives",
-    #"fireteams_operatives": "Operatives in Fireteam",
+    "fireteams_operatives": "Operatives",
 }
+
+# Keys that are handled manually in a parent (e.g., inside render_operatives)
+SKIP_RENDER_KEYS = {"weapons", "abilities", "uniqueactions"}
 
 
 # Load the flattened JSON
@@ -94,26 +100,51 @@ def render_operatives(operatives):
         # Weapons
         if op.get("weapons"):
             html.append("<h3>Weapons</h3>")
-            html.append(render_table("Weapons", op["weapons"]))
+            weapon_rows = []
+            for weapon in op["weapons"]:
+                wepname = escape(weapon.get("wepname", ""))
+                weptype = escape(weapon.get("weptype", ""))
+                profiles = weapon.get("profiles", [])
+
+                if profiles and all(isinstance(p, dict) for p in profiles):
+                    # Filter out blacklisted fields
+                    headers = sorted({k for p in profiles for k in p if k not in BLACKLIST_FIELDS})
+                    profile_table = ["<table>"]
+                    profile_table.append("<tr>" + "".join(f"<th>{escape(h)}</th>" for h in headers) + "</tr>")
+                    for p in profiles:
+                        profile_table.append("<tr>" + "".join(f"<td>{escape(str(p.get(h, '')))}</td>" for h in headers) + "</tr>")
+                    profile_table.append("</table>")
+                    profile_html = "".join(profile_table)
+                else:
+                    profile_html = "<em>No profiles</em>"
+
+                weapon_rows.append(f"<tr><td>{wepname}</td><td>{weptype}</td><td>{profile_html}</td></tr>")
+
+            html.append("<table>")
+            html.append("<tr><th>Weapon</th><th>Type</th><th>Profiles</th></tr>")
+            html.extend(weapon_rows)
+            html.append("</table>")
+
+
 
         # Abilities
         if op.get("abilities"):
             html.append("<h3>Abilities</h3>")
-            html.append(render_table("Abilities", op["abilities"]))
+            html.append(render_table("Abilities", op["abilities"], add_header=False))
 
         # Unique Actions
         if op.get("uniqueactions"):
             html.append("<h3>Unique Actions</h3>")
-            html.append(render_table("Unique Actions", op["uniqueactions"]))
+            html.append(render_table("Unique Actions", op["uniqueactions"], add_header=False))
 
     return "\n".join(html)
 
 def contains_html(s):
     return bool(re.search(r"</?[a-z][\s\S]*?>", s, re.IGNORECASE))
 
-def render_table(title, items):
-    if not items:
-        return f"<h2>{escape(title)}</h2><p><em>No data</em></p>"
+def render_table(title, items, add_header=True):
+    if not items:        
+        return f"<h2>{TITLE_OVERRIDES.get(title.lower(), title)}</h2><p><em>No data</em></p>"
 
     # Column ordering and pretty header names
     if title.lower() in COLUMN_CONFIG:
@@ -124,7 +155,10 @@ def render_table(title, items):
         header_labels = ordered_headers
 
     pretty_title = TITLE_OVERRIDES.get(title.lower(), title)
-    table_html = [f"<h2>{escape(pretty_title)}</h2>", "<table>"]
+    table_html = []
+    if add_header:
+        table_html.append(f"<h2>{escape(pretty_title)}</h2>")
+    table_html.append("<table>")
     table_html.append("<tr>" + "".join(f"<th>{escape(h)}</th>" for h in header_labels) + "</tr>")
 
     # Custom emphasis rule for specific tables
@@ -135,8 +169,9 @@ def render_table(title, items):
         for h in ordered_headers:
             val = item.get(h, "")
             if isinstance(val, list) and all(isinstance(sub, dict) for sub in val):
+                # Render inner table for list of dicts
                 inner_table = ["<table>"]
-                inner_headers = sorted({k for d in val for k in d})
+                inner_headers = sorted({k for d in val for k in d if k not in BLACKLIST_FIELDS})
                 inner_table.append("<tr>" + "".join(f"<th>{escape(k)}</th>" for k in inner_headers) + "</tr>")
                 for d in val:
                     inner_table.append("<tr>" + "".join(
@@ -163,8 +198,11 @@ def render_table(title, items):
 
 # Recursively render any dict/list combo
 def render_value(key, value):
-    if isinstance(value, list) and all(isinstance(i, dict) for i in value):
-        return render_table(key, value)
+    if isinstance(value, list):
+        if not value:
+            return f"<h2>{TITLE_OVERRIDES.get(key.lower(), key)}</h2><p><em>No data</em></p>"
+        elif all(isinstance(i, dict) for i in value):
+            return render_table(key, value)
     elif isinstance(value, dict):
         return "\n".join(
             render_value(f"{key} - {k}", v)
@@ -172,9 +210,9 @@ def render_value(key, value):
             if k not in BLACKLIST_FIELDS
         )
     elif isinstance(value, str) and contains_html(value):
-        return f"<h2>{escape(key)}</h2><div>{value}</div>"  # render embedded HTML
+        return f"<h2>{TITLE_OVERRIDES.get(key.lower(), key)}</h2><div>{value}</div>"  # render embedded HTML
     else:
-        return f"<h2>{escape(key)}</h2><pre>{escape(str(value))}</pre>"
+        return f"<h2>{TITLE_OVERRIDES.get(key.lower(), key)}</h2><pre>{escape(str(value))}</pre>"
 
 # Render all top-level keys
 for key, value in data.items():
@@ -183,6 +221,7 @@ for key, value in data.items():
 
     if isinstance(value, list):
         if key == "fireteams_operatives":
+            html_parts.append(f"<h1>{TITLE_OVERRIDES.get(key.lower(), key)}</h1>")
             html_parts.append(render_operatives(value))
         else:
             html_parts.append(render_table(key, value))

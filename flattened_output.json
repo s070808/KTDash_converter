@@ -461,6 +461,30 @@
                                     "BS": "3+",
                                     "D": "3/4",
                                     "SR": "Ceaseless"
+                                },{
+                                    "factionid": "HBR",
+                                    "killteamid": "GK24",
+                                    "fireteamid": "GK24",
+                                    "opid": "LIB",
+                                    "wepid": "SB",
+                                    "profileid": "0",
+                                    "name": "",
+                                    "A": "4",
+                                    "BS": "3+",
+                                    "D": "3/4",
+                                    "SR": "vdasvasdvasdvdsa"
+                                },{
+                                    "factionid": "HBR",
+                                    "killteamid": "GK24",
+                                    "fireteamid": "GK24",
+                                    "opid": "LIB",
+                                    "wepid": "SB",
+                                    "profileid": "0",
+                                    "name": "",
+                                    "A": "4",
+                                    "BS": "3+",
+                                    "D": "3/4",
+                                    "SR": "523456yrtfghhfaesdfasgsdrfgsa"
                                 }
                             ],
                             "isselected": false
@@ -1820,6 +1844,32 @@
                     "weptype": "R",
                     "isdefault": 0,
                     "profiles": [
+                        {
+                            "factionid": "HBR",
+                            "killteamid": "GK24",
+                            "fireteamid": "GK24",
+                            "opid": "LIB",
+                            "wepid": "SB",
+                            "profileid": "0",
+                            "name": "",
+                            "A": "4",
+                            "BS": "3+",
+                            "D": "3/4",
+                            "SR": "Ceaseless"
+                        },
+                        {
+                            "factionid": "HBR",
+                            "killteamid": "GK24",
+                            "fireteamid": "GK24",
+                            "opid": "LIB",
+                            "wepid": "SB",
+                            "profileid": "0",
+                            "name": "",
+                            "A": "4",
+                            "BS": "3+",
+                            "D": "3/4",
+                            "SR": "Ceaseless"
+                        },
                         {
                             "factionid": "HBR",
                             "killteamid": "GK24",
