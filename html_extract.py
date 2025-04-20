@@ -2,9 +2,12 @@ from bs4 import BeautifulSoup, Tag, Comment, NavigableString
 import re
 
 # Tags that should be excluded from export even if class matches
-blocked_tags = ['button','input','textarea']
+blocked_tags = ['button', 'input', 'textarea']
 
-# --- IGNORE COMMENTS AND WHITESPACE LINES  --------------------------------------------------
+# Class names that should be blocked entirely (along with all their children)
+blocked_class_names = ['modal', 'modal-dialog', 'navbar']
+
+# --- HELPERS  --------------------------------------------------
 
 def is_comment_only(el):
     """
@@ -20,10 +23,6 @@ def is_comment_only(el):
             if not is_comment_only(desc):
                 return False
     return True
-
-
-
-# --- ANGULAR FUNCTIONS REMOVAL  --------------------------------------------------
 
 def contains_angular_syntax(el):
     """
@@ -47,6 +46,19 @@ def contains_angular_syntax(el):
 
     return False
 
+def has_blocked_class(el):
+    """
+    Returns True if any of the element's class names match those in blocked_class_names.
+    Useful for skipping entire elements and their children during parsing.
+    """
+    if el.has_attr("class"):
+        for cls in el["class"]:
+            if cls in blocked_class_names:
+                # Set breakpoint or logging here
+                return True
+        return False
+    else:
+        return False
 
 # --- TEXT CLEANUP FUNCTION --------------------------------------------------
 
@@ -74,8 +86,13 @@ def clean_to_div_tree(element, soup):
     - Converts raw text into <p> tags for paragraphs (unless inside <h1>-<h6>)
     - Skips any tags listed in `blocked_tags`
     - Skips all HTML comments (even visible ones)
+    - Skips any elements with classes in `blocked_class_names`
     - Recursively processes children and builds the cleaned output
     """
+
+    # ❌ Skip this element entirely if it has a blocked class
+    if has_blocked_class(element):
+        return None
 
     clean_tag = soup.new_tag(element.name)
     is_heading = element.name in ['h1', 'h2', 'h3', 'h4', 'h5', 'h6']
@@ -100,6 +117,8 @@ def clean_to_div_tree(element, soup):
         # ✅ Handle nested tags
         elif isinstance(child, Tag):
             if child.name in blocked_tags:
+                continue
+            if has_blocked_class(child):
                 continue
             if is_comment_only(child):
                 continue
@@ -143,14 +162,12 @@ def extract_clean_divs(input_html_path, class_names, output_html_path):
         ]
 
         for el in elements:
-            # Skip blocked tags
             if el.name in blocked_tags:
                 continue
-            # Skip if comment-only block
+            if has_blocked_class(el):
+                continue
             if is_comment_only(el):
                 continue
-
-            # Skip if Angular directives or 'ngSomething' is detected
             if contains_angular_syntax(el):
                 continue
 
