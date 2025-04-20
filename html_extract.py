@@ -26,7 +26,8 @@ def extract_clean_divs(input_html_path, class_names, output_html_path):
         soup = BeautifulSoup(file, 'html.parser')
 
     # Create new HTML document
-    new_soup = BeautifulSoup('<html><head><title>Extracted Divs</title></head><body></body></html>', 'html.parser')
+    new_soup = BeautifulSoup('''<html><head><title>Extracted Divs</title><style>body {background-color: #1e1e1e;color: #f0f0f0;font-family: sans-serif;padding: 20px;}div {margin-bottom: 1em;}</style></head><body></body></html>''', 'html.parser')
+
     new_body = new_soup.body
 
     for class_name in class_names:
@@ -41,8 +42,8 @@ def extract_clean_divs(input_html_path, class_names, output_html_path):
 
 # Example usage
 if __name__ == '__main__':
-    input_path = 'C:/Stuff/input.html'
-    output_path = 'C:/Stuff/extracted_output.html'
+    input_path = 'C:/Stuff/GIT/KTDash_converter/input.html'
+    output_path = 'C:/Stuff/GIT/KTDash_converter/extracted_output.html'
     class_names = ['tab-content']  # Replace with desired class names
 
     extract_clean_divs(input_path, class_names, output_path)
