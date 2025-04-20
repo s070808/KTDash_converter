@@ -4,17 +4,62 @@ import re
 # Tags that should be excluded from export even if class matches
 blocked_tags = ['button','input','textarea']
 
+# --- IGNORE COMMENTS AND WHITESPACE LINES  --------------------------------------------------
+
+def is_comment_only(el):
+    """
+    Returns True if all contents of the element (and its descendants)
+    are either comments or whitespace (no visible text).
+    """
+    for desc in el.descendants:
+        if isinstance(desc, Comment):
+            continue
+        if isinstance(desc, NavigableString) and desc.strip():
+            return False  # Found real text
+        if isinstance(desc, Tag):
+            if not is_comment_only(desc):
+                return False
+    return True
+
+
+
+# --- ANGULAR FUNCTIONS REMOVAL  --------------------------------------------------
+
+def contains_angular_syntax(el):
+    """
+    Returns True if the element has text or attributes that start with 'ng'
+    (e.g., ngRepeat, ngIf), used to filter out Angular-generated lines.
+    """
+    # Check all attributes (both names and values)
+    for attr, val in el.attrs.items():
+        if attr.startswith("ng"):
+            return True
+        if isinstance(val, list):
+            if any(str(v).startswith("ng") for v in val):
+                return True
+        elif isinstance(val, str) and val.startswith("ng"):
+            return True
+
+    # Check direct and descendant text content
+    for text in el.strings:
+        if isinstance(text, NavigableString) and 'ng' in text and re.search(r'\bng\w+', text):
+            return True
+
+    return False
+
+
 # --- TEXT CLEANUP FUNCTION --------------------------------------------------
 
 def clean_text(text):
     """
-    Clean and normalize text by:
-    - Removing leading/trailing whitespace
-    - Replacing any sequence of whitespace (tabs, newlines, multiple spaces) with a single space
+    Normalize whitespace in text:
+    - Replace tabs, newlines, and repeated spaces with a single space
+    - Strip leading/trailing space
     """
     if not text:
         return ''
     return re.sub(r'\s+', ' ', text).strip()
+
 
 
 
@@ -28,32 +73,37 @@ def clean_to_div_tree(element, soup):
     - Removes all attributes (class, id, etc.)
     - Converts raw text into <p> tags for paragraphs (unless inside <h1>-<h6>)
     - Skips any tags listed in `blocked_tags`
+    - Skips all HTML comments (even visible ones)
     - Recursively processes children and builds the cleaned output
     """
 
-    # Create a new tag using the same name as the original (e.g., 'div', 'h2', etc.)
     clean_tag = soup.new_tag(element.name)
-
-    # Determine whether this is a heading tag (h1–h6)
     is_heading = element.name in ['h1', 'h2', 'h3', 'h4', 'h5', 'h6']
 
     for child in element.children:
 
-        # Case 1: Raw text
+        # ❌ Skip all comment blocks — anything wrapped in <!-- ... -->
+        if isinstance(child, Comment):
+            continue
+
+        # ✅ Handle text nodes
         if isinstance(child, str):
             cleaned = clean_text(child)
             if cleaned:
                 if is_heading:
                     clean_tag.append(cleaned)
                 else:
-                    # Wrap cleaned text in a real <p> tag
                     p_tag = soup.new_tag("p")
                     p_tag.string = cleaned
                     clean_tag.append(p_tag)
 
-        # Case 2: Nested tag
+        # ✅ Handle nested tags
         elif isinstance(child, Tag):
             if child.name in blocked_tags:
+                continue
+            if is_comment_only(child):
+                continue
+            if contains_angular_syntax(child):
                 continue
             cleaned_child = clean_to_div_tree(child, soup)
             clean_tag.append(cleaned_child)
@@ -93,8 +143,15 @@ def extract_clean_divs(input_html_path, class_names, output_html_path):
         ]
 
         for el in elements:
-            # Skip blocked tags (e.g., <button>, <script>, etc.)
+            # Skip blocked tags
             if el.name in blocked_tags:
+                continue
+            # Skip if comment-only block
+            if is_comment_only(el):
+                continue
+
+            # Skip if Angular directives or 'ngSomething' is detected
+            if contains_angular_syntax(el):
                 continue
 
             # Skip if there's no visible text
@@ -123,7 +180,7 @@ if __name__ == '__main__':
     output_path = 'C:/Stuff/GIT/KTDash_converter/extracted_output.html'
 
     # Class names to extract from the HTML (only these will be processed)
-    class_names = ['pointer', 'tab-pane', 'modal-content']  # Add or replace with your own
+    class_names = ['tab-content', 'p-1']  # Add or replace with your own
 
     # Run the extraction
     extract_clean_divs(input_path, class_names, output_path)
