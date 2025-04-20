@@ -33,6 +33,7 @@ TITLE_OVERRIDES = {
     "operatives_abilities": "Faction Rules",
     "operatives_uniqueactions": "Unique Actions for Operatives",
     "fireteams_operatives": "Operatives",
+    "ploys": "Ploys"
 }
 
 EMPHASIZE_FIELDS = {
@@ -41,6 +42,7 @@ EMPHASIZE_FIELDS = {
 }
 
 SKIP_RENDER_KEYS = {"weapons", "abilities", "uniqueactions"}
+RENDER_ORDER = ["description", "killteamcomp", "fireteams_operatives", "ploys", "equipments", "tacops"]
 
 # === UTILITY ===
 
@@ -191,16 +193,15 @@ html_parts = [
 
 # === MAIN RENDER LOOP ===
 
-for key, value in data.items():
-    if key in BLACKLIST_KEYS:
+for key in RENDER_ORDER:
+    value = data.get(key)
+    if not value:
         continue
-
-    if isinstance(value, list):
-        if key == "fireteams_operatives":
-            html_parts.append(f"<h1>{title_for(key)}</h1>")
-            html_parts.append(render_operatives(value))
-        else:
-            html_parts.append(render_table(key, value))
+    if key == "fireteams_operatives":
+        html_parts.append(f"<h1>{title_for(key)}</h1>")
+        html_parts.append(render_operatives(value))
+    elif isinstance(value, list):
+        html_parts.append(render_table(key, value))
     elif isinstance(value, dict):
         for subkey, subval in value.items():
             if isinstance(subval, list):
@@ -215,4 +216,4 @@ for key, value in data.items():
 
 html_parts.append("</body></html>")
 Path("flattened_output_viewer.html").write_text("\n".join(html_parts), encoding="utf-8")
-print("✅ HTML viewer created: flattened_output_viewer.html (clean, consistent, and organized)")
+print("✅ HTML viewer created: flattened_output_viewer.html (clean, consistent, and ordered)")
