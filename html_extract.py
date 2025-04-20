@@ -30,42 +30,32 @@ def clean_text(text):
 
 def clean_to_div_tree(element, soup):
     """
-    Recursively convert an HTML element and its children into a structure made only of <div> tags,
-    each containing clean, readable text with <p> tags for paragraph separation.
-
-    - Converts all HTML tag types to <div> for consistency
-    - Ignores empty text nodes and comment tags
-    - Uses <p> tags to preserve paragraphs based on newline separation
-    - Parses cleaned text as HTML to prevent escaping (<p> rendered properly)
-    - Recursively builds a div-only hierarchy
+    Recursively convert an HTML element into a cleaned structure that:
+    - Preserves original tag types (h2, li, ul, etc.)
+    - Removes all attributes (class, id, etc.)
+    - Converts any text into <p> tags if multiple paragraphs
+    - Recursively processes children
     """
-    div = soup.new_tag("div")  # Create a new <div> wrapper for this element's content
+    # Create a new tag using the same name as the original (e.g., 'h2', 'ul', 'li')
+    clean_tag = soup.new_tag(element.name)
 
-    # Case 1: Element contains only direct text (no child tags)
-    if element.string and element.string.strip():
-        # Clean the string and parse as HTML so <p> tags are interpreted correctly
-        parsed_html = BeautifulSoup(clean_text(element.string), 'html.parser')
-        div.append(parsed_html)  # Append parsed <p> tag(s) directly into the <div>
+    # Loop through each child node of the current element
+    for child in element.children:
+        # Handle plain text nodes (not tags)
+        if isinstance(child, str):
+            cleaned = clean_text(child)
+            if cleaned:
+                # Parse cleaned text into HTML (e.g., with <p> tags)
+                parsed = BeautifulSoup(cleaned, 'html.parser')
+                clean_tag.append(parsed)
 
-    else:
-        # Case 2: Element contains children (tags or nested text nodes)
-        for child in element.children:
+        # Handle nested HTML tags
+        elif isinstance(child, Tag):
+            cleaned_child = clean_to_div_tree(child, soup)
+            clean_tag.append(cleaned_child)
 
-            # If the child is a plain text node (not a tag)
-            if isinstance(child, str):
-                if child.strip():  # Skip empty or whitespace-only nodes
-                    text_div = soup.new_tag("div")  # Wrap this text block in its own <div>
-                    # Clean the text and parse HTML tags like <p> within it
-                    parsed_text = BeautifulSoup(clean_text(child), 'html.parser')
-                    text_div.append(parsed_text)  # Append parsed <p> tags into text <div>
-                    div.append(text_div)  # Add text block to parent <div>
+    return clean_tag
 
-            # If the child is an HTML tag (e.g., <span>, <div>, etc.)
-            elif isinstance(child, Tag):
-                # Recursively convert child tag to a clean <div> tree
-                div.append(clean_to_div_tree(child, soup))
-
-    return div  # Return the fully constructed <div> for this node
 
 
 # --- MAIN FUNCTION TO PROCESS HTML FILE -------------------------------------
