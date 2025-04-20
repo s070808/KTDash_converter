@@ -1,11 +1,19 @@
 from bs4 import BeautifulSoup, Tag, Comment, NavigableString
 
+
+# Tags that should be excluded from export even if class matches
+blocked_tags = ['button', 'input', 'textarea']
+
 def clean_to_div_tree(element, soup):
-    """Recursively copy only tag structure and visible text — strip all attributes."""
+    """Recursively copy only tag structure and visible text — strip all attributes, skip blocked tags."""
     if not isinstance(element, Tag):
         return None
 
-    # Create the same tag but with no attributes
+    # Skip the entire tag and its subtree if it's in the blocked list
+    if element.name in blocked_tags:
+        return None
+
+    # Create the tag (without any attributes)
     clean_tag = soup.new_tag(element.name)
 
     for child in element.children:
@@ -21,6 +29,7 @@ def clean_to_div_tree(element, soup):
                 clean_tag.append(text)
 
     return clean_tag if clean_tag.contents else None
+
 
 
 
