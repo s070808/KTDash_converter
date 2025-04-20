@@ -15,34 +15,34 @@ BLACKLIST_FIELDS = {
 COLUMN_CONFIG = {
     "strat": [
         ("ployname", "Name", "w20"),       # Short name
-        ("CP", "CP", "w10"),               # Small number
-        ("description", "Description", "w70")  # Most of the space
+        ("CP", "CP", "w5"),               # Small number
+        ("description", "Description", "w75")  # Most of the space
     ],
     "tac": [
         ("ployname", "Name", "w20"),
-        ("CP", "CP", "w10"),
-        ("description", "Description", "w70")
+        ("CP", "CP", "w5"),
+        ("description", "Description", "w75")
     ],
     "equipments": [
-        ("eqname", "Name", "w30"),         # Can be slightly longer
-        ("eqdescription", "Description", "w70")
+        ("eqname", "Name", "w25"),         # Can be slightly longer
+        ("eqdescription", "Description", "w75")
     ],
     "tacops": [
         ("title", "Title", "w25"),         # Brief, but longer than a name
         ("description", "Description", "w75")
     ],
-    "operatives_abilities": [
-        ("title", "Title", "w30"),         # Often a short phrase
-        ("description", "Description", "w70")
+    "operatives_abilities": [              # Faction Rules
+        ("title", "Title", "w20"),         # Often a short phrase
+        ("description", "Description", "w80")
     ],
     "weapons": [
-        ("wepname", "Weapon", "w30"),      # Longer names like "Shuriken Catapult"
-        ("weptype", "Ranged/Melee", "w20"),# Short tag
-        ("profiles", "Profiles", "w50")    # Table goes here, needs width
+        ("wepname", "Weapon", "w15"),      # Longer names like "Shuriken Catapult"
+        ("weptype", "Ranged/Melee", "w10"),# Short tag
+        ("profiles", "Profiles", "w75")    # Table goes here, needs width
     ],
     "abilities": [
-        ("title", "Title", "w30"),
-        ("description", "Description", "w70")
+        ("title", "Title", "w20"),
+        ("description", "Description", "w80")
     ]
 }
 
@@ -66,7 +66,7 @@ EMPHASIZE_FIELDS = {
 }
 
 SKIP_RENDER_KEYS = {"weapons", "abilities", "uniqueactions"}
-RENDER_ORDER = ["description", "killteamcomp", "fireteams_operatives", "ploys", "equipments", "tacops"]
+RENDER_ORDER = ["description", "killteamcomp","operatives_abilities", "fireteams_operatives", "ploys", "equipments", "tacops"]
 
 # === UTILITY ===
 
