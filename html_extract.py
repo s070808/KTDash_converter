@@ -13,17 +13,17 @@ def clean_text(text):
     if not text:
         return ''
 
-    # Split into blocks by 2+ newlines to identify paragraphs
+    # Split text into paragraphs based on 2+ newlines
     paragraphs = re.split(r'\n{2,}', text)
 
     cleaned_paragraphs = []
     for para in paragraphs:
-        # Replace all internal whitespace (spaces, tabs, newlines) with single space
         cleaned = re.sub(r'\s+', ' ', para).strip()
         if cleaned:
             cleaned_paragraphs.append(f'<p>{cleaned}</p>')
 
     return ''.join(cleaned_paragraphs)
+
 
 
 # --- HTML TO CLEAN DIV STRUCTURE -------------------------------------------
@@ -33,28 +33,31 @@ def clean_to_div_tree(element, soup):
     Recursively convert an HTML element into a cleaned structure that:
     - Preserves original tag types (h2, li, ul, etc.)
     - Removes all attributes (class, id, etc.)
-    - Converts any text into <p> tags if multiple paragraphs
+    - Converts raw text into <p> tags for paragraphs
     - Recursively processes children
     """
+
     # Create a new tag using the same name as the original (e.g., 'h2', 'ul', 'li')
     clean_tag = soup.new_tag(element.name)
 
-    # Loop through each child node of the current element
+    # Go through each child node of this element
     for child in element.children:
-        # Handle plain text nodes (not tags)
+
+        # If it's a raw text node (NavigableString), clean and wrap it in <p>
         if isinstance(child, str):
             cleaned = clean_text(child)
             if cleaned:
-                # Parse cleaned text into HTML (e.g., with <p> tags)
+                # Parse the cleaned string so HTML tags like <p> are kept as real tags
                 parsed = BeautifulSoup(cleaned, 'html.parser')
                 clean_tag.append(parsed)
 
-        # Handle nested HTML tags
+        # If it's an HTML tag (e.g., <a>, <span>, <div>, etc.), process recursively
         elif isinstance(child, Tag):
             cleaned_child = clean_to_div_tree(child, soup)
             clean_tag.append(cleaned_child)
 
     return clean_tag
+
 
 
 
@@ -77,22 +80,24 @@ def extract_clean_divs(input_html_path, class_names, output_html_path):
 
     # For each class name to look for in the original HTML...
     for class_name in class_names:
-        # Find all elements in the input HTML with that class
-        elements = soup.find_all(class_=class_name)
+        # Collect all elements that match any class name, maintaining document order
+        elements = [
+            el for el in soup.find_all(True)
+            if el.has_attr("class") and any(cls in class_names for cls in el["class"])
+        ]
 
         for el in elements:
-            # Only process if the element or its children contain visible (non-comment, non-whitespace) text
+            # Skip if there's no visible text
             has_visible_text = any(
                 isinstance(child, NavigableString) and not isinstance(child, Comment) and child.strip()
                 for child in el.descendants
             )
             if not has_visible_text:
-                continue  # Skip completely empty or comment-only blocks
+                continue
 
-            # Convert this element into a clean <div> tree
             clean_div = clean_to_div_tree(el, new_soup)
             if clean_div:
-                new_body.append(clean_div)  # Add to the new <body>
+                new_body.append(clean_div)
 
     # Write the final cleaned HTML output to file
     with open(output_html_path, 'w', encoding='utf-8') as file:
@@ -108,7 +113,7 @@ if __name__ == '__main__':
     output_path = 'C:/Stuff/GIT/KTDash_converter/extracted_output.html'
 
     # Class names to extract from the HTML (only these will be processed)
-    class_names = ['pointer', 'tab-pane']  # Add or replace with your own
+    class_names = ['pointer', 'tab-pane', 'modal-content']  # Add or replace with your own
 
     # Run the extraction
     extract_clean_divs(input_path, class_names, output_path)
