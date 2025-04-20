@@ -13,13 +13,37 @@ BLACKLIST_FIELDS = {
 }
 
 COLUMN_CONFIG = {
-    "strat": [("ployname", "Name"), ("CP", "CP"), ("description", "Description")],
-    "tac": [("ployname", "Name"), ("CP", "CP"), ("description", "Description")],
-    "equipments": [("eqname", "Name"), ("eqdescription", "Description")],
-    "tacops": [("title", "Title"), ("description", "Description")],
-    "operatives_abilities": [("title", "Title"), ("description", "Description")],
-    "weapons": [("wepname", "Weapon"), ("weptype", "Ranged/Melee"), ("profiles", "Profiles")],
-    "abilities": [("title", "Title"), ("description", "Description")],
+    "strat": [
+        ("ployname", "Name", "w20"),       # Short name
+        ("CP", "CP", "w10"),               # Small number
+        ("description", "Description", "w70")  # Most of the space
+    ],
+    "tac": [
+        ("ployname", "Name", "w20"),
+        ("CP", "CP", "w10"),
+        ("description", "Description", "w70")
+    ],
+    "equipments": [
+        ("eqname", "Name", "w30"),         # Can be slightly longer
+        ("eqdescription", "Description", "w70")
+    ],
+    "tacops": [
+        ("title", "Title", "w25"),         # Brief, but longer than a name
+        ("description", "Description", "w75")
+    ],
+    "operatives_abilities": [
+        ("title", "Title", "w30"),         # Often a short phrase
+        ("description", "Description", "w70")
+    ],
+    "weapons": [
+        ("wepname", "Weapon", "w30"),      # Longer names like "Shuriken Catapult"
+        ("weptype", "Ranged/Melee", "w20"),# Short tag
+        ("profiles", "Profiles", "w50")    # Table goes here, needs width
+    ],
+    "abilities": [
+        ("title", "Title", "w30"),
+        ("description", "Description", "w70")
+    ]
 }
 
 TITLE_OVERRIDES = {
@@ -73,33 +97,38 @@ def render_table(title, items, add_header=True):
     pretty_title = title_for(title)
 
     if title.lower() in COLUMN_CONFIG:
-        ordered_headers = [field for field, _ in COLUMN_CONFIG[title.lower()]]
-        header_labels = [label for _, label in COLUMN_CONFIG[title.lower()]]
+        ordered_headers = [field for field, *_ in COLUMN_CONFIG[title.lower()]]
+        header_labels = [label for _, label, *_ in COLUMN_CONFIG[title.lower()]]
+        column_classes = [col[2] if len(col) > 2 else "" for col in COLUMN_CONFIG[title.lower()]]
     else:
         ordered_headers = sorted({key for item in items for key in item if key not in BLACKLIST_FIELDS})
         header_labels = ordered_headers
+        column_classes = [""] * len(ordered_headers)
 
     table_html = []
     if add_header:
         table_html.append(f"<h2>{escape(pretty_title)}</h2>")
     table_html.append("<table>")
-    table_html.append("<tr>" + "".join(f"<th>{escape(h)}</th>" for h in header_labels) + "</tr>")
+    table_html.append("<tr>" + "".join(
+        f"<th class='{escape(cls)}'>{escape(h)}</th>" if cls else f"<th>{escape(h)}</th>"
+        for h, cls in zip(header_labels, column_classes)
+    ) + "</tr>")
 
     emphasize_main, emphasize_add = EMPHASIZE_FIELDS.get(title.lower(), (None, None))
 
     for item in items:
         row = []
-        for h in ordered_headers:
+        for h, cls in zip(ordered_headers, column_classes):
             val = item.get(h, "")
             if isinstance(val, list) and all(isinstance(sub, dict) for sub in val):
-                row.append(f"<td>{render_subtable(val)}</td>")
+                cell = render_subtable(val)
             elif isinstance(val, str) and contains_html(val):
-                row.append(f"<td>{val}</td>")
+                cell = val
             elif h == emphasize_main and emphasize_main in item and emphasize_add in item:
-                combined = f"{escape(str(item[emphasize_main]))} <span class='emphasis'>[{escape(str(item[emphasize_add]))}]</span>"
-                row.append(f"<td>{combined}</td>")
+                cell = f"{escape(str(item[emphasize_main]))} <span class='emphasis'>[{escape(str(item[emphasize_add]))}]</span>"
             else:
-                row.append(f"<td>{escape(str(val))}</td>")
+                cell = escape(str(val))
+            row.append(f"<td class='{escape(cls)}'>{cell}</td>" if cls else f"<td>{cell}</td>")
         table_html.append("<tr>" + "".join(row) + "</tr>")
 
     table_html.append("</table>")
@@ -185,6 +214,26 @@ html_parts = [
     "    h2 { border-bottom: 2px solid #61dafb; padding-bottom: 0.25em; }",
     "    h3 { color: #9cdcfe; margin-top: 1.5em; }",
     "    table { margin-bottom: 1em; }",
+    "	.w5   { width: 5%; }",
+    "	.w10  { width: 10%; }",
+    "	.w15  { width: 15%; }",
+    "	.w20  { width: 20%; }",
+    "	.w25  { width: 25%; }",
+    "	.w30  { width: 30%; }",
+    "	.w35  { width: 35%; }",
+    "	.w40  { width: 40%; }",
+    "	.w45  { width: 45%; }",
+    "	.w50  { width: 50%; }",
+    "	.w55  { width: 55%; }",
+    "	.w60  { width: 60%; }",
+    "	.w65  { width: 65%; }",
+    "	.w70  { width: 70%; }",
+    "	.w75  { width: 75%; }",
+    "	.w80  { width: 80%; }",
+    "	.w85  { width: 85%; }",
+    "	.w90  { width: 90%; }",
+    "	.w95  { width: 95%; }",
+    "	.w100 { width: 100%; }",
     "  </style>",
     "</head>",
     "<body>",
