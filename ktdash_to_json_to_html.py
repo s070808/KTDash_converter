@@ -6,29 +6,38 @@ import re
 import os
 
 # === CONFIGURATION ===
-base_input_path_html = f"html/"
-input_temp_json = "pretty_output.json"
-intermediate_json = "cleaned_output.json"
 
-input_flattened_json = "flattened_output.json"
-base_output_file_html = "html/"
+# Input and output file paths
+BASE_INPUT_PATH_HTML  = f"html/"
+INPUT_TEMP_JSON = "pretty_output.json"
+INTERMEDIATE_JSON  = "cleaned_output.json"
+INPUT_FLATTENED_JSON  = "flattened_output.json"
+BASE_OUTPUT_PATH_HTML  = "html/"
 
-# Keys to remove from top level
-input_keys_to_ignore = ["rosters"]
+# Input preprocessing
+INPUT_KEYS_TO_IGNORE = ["rosters"] # Keys to remove from top level
 
-# Nested keys to flatten recursively
-input_flatten_targets = {
+INPUT_FLATTEN_TARGETS = {   # Nested keys to flatten recursively
     "operatives": ["abilities", "weapons", "uniqueactions"],
     "fireteams": ["operatives"]
 }
 
-BLACKLIST_KEYS = {"fireteams", "operatives_weapons", "customkeyword", "killteamname"}
+# Blacklists
+BLACKLIST_KEYS = {
+    "fireteams",
+    "operatives_weapons",
+    "customkeyword",
+    "killteamname"
+}
+
 BLACKLIST_FIELDS = {
-    "factionid", "killteamid", "ployid", "ploytype", "eqcategory", "eqid", "eqvar1", "eqvar2", "eqvar3", "eqvar4",
-    "fireteamid", "opid", "eqpts", "eqseq", "edition", "tacopid", "tacopseq", "abilityid", "isdefault",
+    "factionid", "killteamid", "ployid", "ploytype", "eqcategory", "eqid",
+    "eqvar1", "eqvar2", "eqvar3", "eqvar4", "fireteamid", "opid", "eqpts",
+    "eqseq", "edition", "tacopid", "tacopseq", "abilityid", "isdefault",
     "isselected", "wepid", "wepseq", "eqtype", "weapon", "name", "profileid"
 }
 
+# Table configuration
 HORIZONTAL_TABLES = {
     "fireteams_operatives": [
         ("M", "Move"),
@@ -38,13 +47,15 @@ HORIZONTAL_TABLES = {
     ]
 }
 
+# Section headers
 H1_HEADERS = {
     "ploys": "Ploys",
     "equipments": "Equipment List",
-    "tacops": "Tactical Objectives",
+    "tacops": "Tactical Objectives"
     # Add more if needed
 }
 
+# Column layout per section
 COLUMN_CONFIG = {
     "strat": [
         ("ployname", "Name", "w20"),       # Short name
@@ -90,6 +101,7 @@ COLUMN_CONFIG = {
     ],
 }
 
+# Title overrides for display
 TITLE_OVERRIDES = {
     "strat": "Strategic Ploys",
     "tac": "Tactical Ploys",
@@ -104,13 +116,23 @@ TITLE_OVERRIDES = {
     "ploys": "Ploys"
 }
 
+# Fields to emphasize when rendering
 EMPHASIZE_FIELDS = {
     "equipments": ("eqname", "eqtype"),
-    "tacops": ("title", "archetype"),
+    "tacops": ("title", "archetype")
 }
 
+# Rendering options
 SKIP_RENDER_KEYS = {"weapons", "abilities", "uniqueactions"}
-RENDER_ORDER = ["description", "killteamcomp","operatives_abilities", "fireteams_operatives", "ploys", "equipments", "tacops"]
+RENDER_ORDER = [
+    "description",
+    "killteamcomp",
+    "operatives_abilities",
+    "fireteams_operatives",
+    "ploys",
+    "equipments",
+    "tacops"
+]
 
 # === HTML STUFF
 
@@ -143,8 +165,8 @@ def convert_broken_json_from_file(input_path_html):
 
     # Step 5: Pretty-print JSON to file
     pretty_json = json.dumps(data, indent=4)
-    Path(input_temp_json).write_text(pretty_json, encoding="utf-8")
-    print(f"✔️ Pretty JSON written to '{input_temp_json}'.")
+    Path(INPUT_TEMP_JSON).write_text(pretty_json, encoding="utf-8")
+    print(f"✔️ Pretty JSON written to '{INPUT_TEMP_JSON}'.")
 
 def remove_keys(data, keys_to_ignore):
     for key in keys_to_ignore:
@@ -219,20 +241,20 @@ def clean_and_flatten(input_path_html):
     convert_broken_json_from_file(input_path_html)
 
     # === Load original JSON ===
-    with open(input_temp_json, "r", encoding="utf-8") as f:
+    with open(INPUT_TEMP_JSON, "r", encoding="utf-8") as f:
         json_data = json.load(f)
 
     # === Step 1: Remove unwanted keys ===
-    cleaned_data = remove_keys(json_data, input_keys_to_ignore)
-    with open(intermediate_json, "w", encoding="utf-8") as f:
+    cleaned_data = remove_keys(json_data, INPUT_KEYS_TO_IGNORE)
+    with open(INTERMEDIATE_JSON, "w", encoding="utf-8") as f:
         json.dump(cleaned_data, f, indent=4)
-    print(f"🧹 Cleaned JSON written to {intermediate_json} (without: {', '.join(input_keys_to_ignore)})")
+    print(f"🧹 Cleaned JSON written to {INTERMEDIATE_JSON} (without: {', '.join(INPUT_KEYS_TO_IGNORE)})")
 
     # === Step 2: Flatten deeply nested shared children ===
-    flattened_data = flatten_all(cleaned_data, input_flatten_targets)
-    with open(input_flattened_json, "w", encoding="utf-8") as f:
+    flattened_data = flatten_all(cleaned_data, INPUT_FLATTEN_TARGETS)
+    with open(INPUT_FLATTENED_JSON, "w", encoding="utf-8") as f:
         json.dump(flattened_data, f, indent=4)
-    print(f"📦 Deep-flattened JSON written to {input_flattened_json}")
+    print(f"📦 Deep-flattened JSON written to {INPUT_FLATTENED_JSON}")
 
 # === UTILITY ===
 
@@ -426,7 +448,7 @@ def do_work(input):
     clean_and_flatten(input)
 
     # Handle html-ification of JSON
-    with open(input_flattened_json, "r", encoding="utf-8") as f:
+    with open(INPUT_FLATTENED_JSON, "r", encoding="utf-8") as f:
         data = json.load(f)
 
     killteam_name = data.get("killteamname", "Unnamed Kill Team")
@@ -521,6 +543,7 @@ def do_work(input):
             html_parts.append(f"<h1>{escape(H1_HEADERS[key])}</h1>")
 
         if key == "fireteams_operatives":
+            html_parts.append(f"<h1>{title_for(key)}</h1>")
             html_parts.append(render_operatives(value))
 
         elif key == "equipments" and isinstance(value, list):
@@ -554,7 +577,7 @@ def do_work(input):
 
 
     # === FINALIZE OUTPUT ===
-    output_file_html = base_output_file_html + current_killteam_id + ".html"
+    output_file_html = BASE_OUTPUT_PATH_HTML + current_killteam_id + ".html"
 
     html_parts.append("""
     <footer class="credits">
@@ -570,7 +593,7 @@ def do_work(input):
 #### loop thrgouh /html/ktdash_*
 
 # Set the path to the folder you want to scan
-folder_path = base_input_path_html
+folder_path = BASE_INPUT_PATH_HTML
 
 # Loop through the files in the folder
 for filename in os.listdir(folder_path):
