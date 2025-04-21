@@ -3,15 +3,15 @@ from pathlib import Path
 from html import escape
 import html
 import re
+import os
 
 # === CONFIGURATION ===
-team_name = "ktdash_gk"
-input_path_html = f"html/{team_name}.html"
+base_input_path_html = f"html/"
 input_temp_json = "pretty_output.json"
 intermediate_json = "cleaned_output.json"
 
 input_flattened_json = "flattened_output.json"
-output_file_html = "html/"
+base_output_file_html = "html/"
 
 # Keys to remove from top level
 input_keys_to_ignore = ["rosters"]
@@ -114,7 +114,7 @@ RENDER_ORDER = ["description", "killteamcomp","operatives_abilities", "fireteams
 
 # === HTML STUFF
 
-def convert_broken_json_from_file():
+def convert_broken_json_from_file(input_path_html):
     # Step 1: Read the entire HTML file
     try:
         html_content = Path(input_path_html).read_text(encoding="utf-8")
@@ -214,9 +214,9 @@ def flatten_all(data, targets):
     return data
 
 
-def clean_and_flatten():
+def clean_and_flatten(input_path_html):
     # === Load broken JSON from https://ktdash.app/ into json file
-    convert_broken_json_from_file()
+    convert_broken_json_from_file(input_path_html)
 
     # === Load original JSON ===
     with open(input_temp_json, "r", encoding="utf-8") as f:
@@ -420,148 +420,161 @@ def render_operatives(operatives):
     return "\n".join(html)
 
 # === LOAD AND PREP DATA ===
+def do_work(input):
+    
+    # Handle load of ktdash file
+    clean_and_flatten(input)
 
-# Handle load of ktdash file
-clean_and_flatten()
+    # Handle html-ification of JSON
+    with open(input_flattened_json, "r", encoding="utf-8") as f:
+        data = json.load(f)
 
-# Handle html-ification of JSON
-with open(input_flattened_json, "r", encoding="utf-8") as f:
-    data = json.load(f)
+    killteam_name = data.get("killteamname", "Unnamed Kill Team")
+    current_killteam_id = data.get("killteamid", "").upper()
 
-killteam_name = data.get("killteamname", "Unnamed Kill Team")
-current_killteam_id = data.get("killteamid", "").upper()
+    # === HTML HEADER ===
 
-# === HTML HEADER ===
+    html_parts = [
+        "<!DOCTYPE html>",
+        "<html>",
+        "<head>",
+        "  <meta charset='UTF-8'>",
+        f"  <title>{escape(killteam_name)} - Kill Team Overview (Homebrew)</title>",
+        "  <style>",
+        "    body { background: #1e1e1e; color: #d4d4d4; font-family: 'Segoe UI', sans-serif; padding: 2em; }",
+        "    h1, h2 { color: #D55F23; }",
+        "    table { border-collapse: collapse; width: 100%; margin-bottom: 2em; }",
+        "    th, td { border: 1px solid #333; padding: 8px; text-align: left; vertical-align: top; }",
+        "    th { background-color: #333; color: #ffffff; }",
+        "    tr:nth-child(even) { background-color: #2a2a2a; }",
+        "    tr:nth-child(odd) { background-color: #252526; }",
+        "    pre { background: #2d2d2d; padding: 1em; border-radius: 6px; overflow-x: auto; white-space: pre-wrap; }",
+        "    a { color: #D55F23; }",
+        "    .emphasis { font-weight: bold; }",
+        "    h2 { border-bottom: 2px solid #D55F23; padding-bottom: 0.25em; }",
+        "    h3 { color: #D55F23; margin-top: 1.5em; }",
+        "    table { margin-bottom: 1em; }",
+        "	.w5   { width: 5%; }",
+        "	.w10  { width: 10%; }",
+        "	.w15  { width: 15%; }",
+        "	.w20  { width: 20%; }",
+        "	.w25  { width: 25%; }",
+        "	.w30  { width: 30%; }",
+        "	.w35  { width: 35%; }",
+        "	.w40  { width: 40%; }",
+        "	.w45  { width: 45%; }",
+        "	.w50  { width: 50%; }",
+        "	.w55  { width: 55%; }",
+        "	.w60  { width: 60%; }",
+        "	.w65  { width: 65%; }",
+        "	.w70  { width: 70%; }",
+        "	.w75  { width: 75%; }",
+        "	.w80  { width: 80%; }",
+        "	.w85  { width: 85%; }",
+        "	.w90  { width: 90%; }",
+        "	.w95  { width: 95%; }",
+        "	.w100 { width: 100%; }",
+        "	.keywords-block {",
+        "	  margin-top: 1em;",
+        "	  font-size: 0.95em;",
+        "	  color: #cccccc;",
+        "	}",
+        "	",
+        "	.keyword-tag {",
+        "	  display: inline-block;",
+        "	  background-color: #333;",
+        "	  color: #D55F23;",
+        "	  border-radius: 12px;",
+        "	  padding: 0.2em 0.6em;",
+        "	  margin: 0.1em;",
+        "	  font-weight: 500;",
+        "	  font-size: 0.9em;",
+        "	  white-space: nowrap;",
+        "	}",
+        "	footer.credits {",
+        "	  border-top: 1px solid #444;",
+        "	  margin-top: 3em;",
+        "	  padding-top: 1.5em;",
+        "	  font-size: 0.9em;",
+        "	  color: #aaaaaa;",
+        "	}",
+        "	",
+        "	",
+        "	footer.credits a:hover {",
+        "	  text-decoration: underline;",
+        "	}",
+        "  </style>",
+        "</head>",
+        "<body>",
+        f"  <h1>{escape(killteam_name)} - Kill Team Overview (Homebrew)</h1>"
+    ]
 
-html_parts = [
-    "<!DOCTYPE html>",
-    "<html>",
-    "<head>",
-    "  <meta charset='UTF-8'>",
-    f"  <title>{escape(killteam_name)} - Kill Team Overview (Homebrew)</title>",
-    "  <style>",
-    "    body { background: #1e1e1e; color: #d4d4d4; font-family: 'Segoe UI', sans-serif; padding: 2em; }",
-    "    h1, h2 { color: #D55F23; }",
-    "    table { border-collapse: collapse; width: 100%; margin-bottom: 2em; }",
-    "    th, td { border: 1px solid #333; padding: 8px; text-align: left; vertical-align: top; }",
-    "    th { background-color: #333; color: #ffffff; }",
-    "    tr:nth-child(even) { background-color: #2a2a2a; }",
-    "    tr:nth-child(odd) { background-color: #252526; }",
-    "    pre { background: #2d2d2d; padding: 1em; border-radius: 6px; overflow-x: auto; white-space: pre-wrap; }",
-    "    a { color: #D55F23; }",
-    "    .emphasis { font-weight: bold; }",
-    "    h2 { border-bottom: 2px solid #D55F23; padding-bottom: 0.25em; }",
-    "    h3 { color: #D55F23; margin-top: 1.5em; }",
-    "    table { margin-bottom: 1em; }",
-    "	.w5   { width: 5%; }",
-    "	.w10  { width: 10%; }",
-    "	.w15  { width: 15%; }",
-    "	.w20  { width: 20%; }",
-    "	.w25  { width: 25%; }",
-    "	.w30  { width: 30%; }",
-    "	.w35  { width: 35%; }",
-    "	.w40  { width: 40%; }",
-    "	.w45  { width: 45%; }",
-    "	.w50  { width: 50%; }",
-    "	.w55  { width: 55%; }",
-    "	.w60  { width: 60%; }",
-    "	.w65  { width: 65%; }",
-    "	.w70  { width: 70%; }",
-    "	.w75  { width: 75%; }",
-    "	.w80  { width: 80%; }",
-    "	.w85  { width: 85%; }",
-    "	.w90  { width: 90%; }",
-    "	.w95  { width: 95%; }",
-    "	.w100 { width: 100%; }",
-    "	.keywords-block {",
-    "	  margin-top: 1em;",
-    "	  font-size: 0.95em;",
-    "	  color: #cccccc;",
-    "	}",
-    "	",
-    "	.keyword-tag {",
-    "	  display: inline-block;",
-    "	  background-color: #333;",
-    "	  color: #D55F23;",
-    "	  border-radius: 12px;",
-    "	  padding: 0.2em 0.6em;",
-    "	  margin: 0.1em;",
-    "	  font-weight: 500;",
-    "	  font-size: 0.9em;",
-    "	  white-space: nowrap;",
-    "	}",
-    "	footer.credits {",
-    "	  border-top: 1px solid #444;",
-    "	  margin-top: 3em;",
-    "	  padding-top: 1.5em;",
-    "	  font-size: 0.9em;",
-    "	  color: #aaaaaa;",
-    "	}",
-    "	",
-    "	",
-    "	footer.credits a:hover {",
-    "	  text-decoration: underline;",
-    "	}",
-    "  </style>",
-    "</head>",
-    "<body>",
-    f"  <h1>{escape(killteam_name)} - Kill Team Overview (Homebrew)</h1>"
-]
+    # === MAIN RENDER LOOP ===
 
-# === MAIN RENDER LOOP ===
+    for key in RENDER_ORDER:
+        value = data.get(key)
+        if not value:
+            continue
 
-for key in RENDER_ORDER:
-    value = data.get(key)
-    if not value:
-        continue
+        # Insert a custom <h1> header if this key has one
+        if key in H1_HEADERS:
+            html_parts.append(f"<h1>{escape(H1_HEADERS[key])}</h1>")
 
-    # Insert a custom <h1> header if this key has one
-    if key in H1_HEADERS:
-        html_parts.append(f"<h1>{escape(H1_HEADERS[key])}</h1>")
+        if key == "fireteams_operatives":
+            html_parts.append(render_operatives(value))
 
-    if key == "fireteams_operatives":
-        html_parts.append(render_operatives(value))
+        elif key == "equipments" and isinstance(value, list):
+            # Dynamically split equipment by killteamid
+            team_equip = [e for e in value if e.get("killteamid", "").upper() == current_killteam_id]
+            universal_equip = [e for e in value if e.get("killteamid", "").upper() == "ALL"]
 
-    elif key == "equipments" and isinstance(value, list):
-        # Dynamically split equipment by killteamid
-        team_equip = [e for e in value if e.get("killteamid", "").upper() == current_killteam_id]
-        universal_equip = [e for e in value if e.get("killteamid", "").upper() == "ALL"]
+            if team_equip:
+                html_parts.append(f"<h2>{killteam_name} Equipment</h2>")
+                html_parts.append(render_table("equipments", team_equip, add_header=False))  # ✅ Suppress auto <h2>
 
-        if team_equip:
-            html_parts.append(f"<h2>{killteam_name} Equipment</h2>")
-            html_parts.append(render_table("equipments", team_equip, add_header=False))  # ✅ Suppress auto <h2>
-
-        if universal_equip:
-            html_parts.append("<h2>Universal Equipment</h2>")
-            html_parts.append(render_table("equipments", universal_equip, add_header=False))  # ✅ Suppress auto <h2>
-
-
-    elif isinstance(value, list):
-        html_parts.append(render_table(key, value))
-
-    elif isinstance(value, dict):
-        for subkey, subval in value.items():
-            if isinstance(subval, list):
-                html_parts.append(render_table(subkey, subval))
-            else:
-                html_parts.append(render_value(f"{key} - {subkey}", subval))
-
-    else:
-        if not should_skip_key(key):
-            html_parts.append(render_value(key, value))
+            if universal_equip:
+                html_parts.append("<h2>Universal Equipment</h2>")
+                html_parts.append(render_table("equipments", universal_equip, add_header=False))  # ✅ Suppress auto <h2>
 
 
+        elif isinstance(value, list):
+            html_parts.append(render_table(key, value))
 
-# === FINALIZE OUTPUT ===
-output_file_html = output_file_html + current_killteam_id + ".html"
+        elif isinstance(value, dict):
+            for subkey, subval in value.items():
+                if isinstance(subval, list):
+                    html_parts.append(render_table(subkey, subval))
+                else:
+                    html_parts.append(render_value(f"{key} - {subkey}", subval))
 
-html_parts.append("""
-  <footer class="credits">
-    <h2>Credits</h2>
-    <p>This document is based on data from <a href="https://ktdash.app/fa/HBR/kt/GK24" target="_blank">KT Dash – Grey Knights Kill Team</a>.</p> 
-    <p>Recompiled and structured by <a href="https://cults3d.com/en/users/s070808/3d-models" target="_blank">s070808 @ Cults3d</a></p>
-  </footer>
-""")
-html_parts.append("</body></html>")
-Path(output_file_html).write_text("\n".join(html_parts), encoding="utf-8")
-print("✅ HTML viewer created: {output_file}} (clean, consistent, and ordered)")
+        else:
+            if not should_skip_key(key):
+                html_parts.append(render_value(key, value))
+
+
+
+    # === FINALIZE OUTPUT ===
+    output_file_html = base_output_file_html + current_killteam_id + ".html"
+
+    html_parts.append("""
+    <footer class="credits">
+        <h2>Credits</h2>
+        <p>This document is based on data from <a href="https://ktdash.app/fa/HBR/kt/GK24" target="_blank">KT Dash – Grey Knights Kill Team</a>.</p> 
+        <p>Recompiled and structured by <a href="https://cults3d.com/en/users/s070808/3d-models" target="_blank">s070808 @ Cults3d</a></p>
+    </footer>
+    """)
+    html_parts.append("</body></html>")
+    Path(output_file_html).write_text("\n".join(html_parts), encoding="utf-8")
+    print("✅ HTML viewer created: {output_file}} (clean, consistent, and ordered)")
+
+#### loop thrgouh /html/ktdash_*
+
+# Set the path to the folder you want to scan
+folder_path = base_input_path_html
+
+# Loop through the files in the folder
+for filename in os.listdir(folder_path):
+    if filename.startswith("ktdash_"):
+        file_path = os.path.join(folder_path, filename)
+        if os.path.isfile(file_path):
+            do_work(file_path)
