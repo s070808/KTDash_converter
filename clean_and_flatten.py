@@ -1,5 +1,58 @@
 import json
+import html
+import re
 from pathlib import Path
+
+
+# === Configuration ===
+team_name = "ktdash_daem"
+
+input_path_html = f"html/{team_name}.html"
+input_path_json = "pretty_output.json"
+intermediate_path = "cleaned_output.json"
+final_output_path = "flattened_output.json"
+
+# Keys to remove from top level
+keys_to_ignore = ["rosters"]
+
+# Nested keys to flatten recursively
+flatten_targets = {
+    "operatives": ["abilities", "weapons", "uniqueactions"],
+    "fireteams": ["operatives"]
+}
+
+
+def convert_broken_json_from_file():
+    # Step 1: Read the entire HTML file
+    try:
+        html_content = Path(input_path_html).read_text(encoding="utf-8")
+    except FileNotFoundError:
+        print(f"❌ File '{input_path_html}' not found.")
+        return
+
+    # Step 2: Extract the killteam="..." attribute from <body ...>
+    match = re.search(r'killteam="([^"]+)"', html_content)
+    if not match:
+        print("❌ No killteam attribute found in HTML.")
+        return
+
+    html_encoded_json = match.group(1)
+
+    # Step 3: Unescape HTML entities
+    decoded_json_str = html.unescape(html_encoded_json)
+
+    # Step 4: Parse JSON
+    try:
+        data = json.loads(decoded_json_str)
+    except json.JSONDecodeError as e:
+        print("❌ JSON parsing failed:")
+        print(e)
+        return
+
+    # Step 5: Pretty-print JSON to file
+    pretty_json = json.dumps(data, indent=4)
+    Path(input_path_json).write_text(pretty_json, encoding="utf-8")
+    print(f"✔️ Pretty JSON written to '{input_path_json}'.")
 
 
 def remove_keys(data, keys_to_ignore):
@@ -69,34 +122,23 @@ def flatten_all(data, targets):
             data[flattened_key] = collected
     return data
 
+def main():
+    # === Load broken JSON from https://ktdash.app/ into json file
+    convert_broken_json_from_file()
 
+    # === Load original JSON ===
+    with open(input_path_json, "r", encoding="utf-8") as f:
+        json_data = json.load(f)
 
-# === Configuration ===
-input_path = "pretty_output.json"
-intermediate_path = "cleaned_output.json"
-final_output_path = "flattened_output.json"
+    # === Step 1: Remove unwanted keys ===
+    cleaned_data = remove_keys(json_data, keys_to_ignore)
+    with open(intermediate_path, "w", encoding="utf-8") as f:
+        json.dump(cleaned_data, f, indent=4)
+    print(f"🧹 Cleaned JSON written to {intermediate_path} (without: {', '.join(keys_to_ignore)})")
 
-# Keys to remove from top level
-keys_to_ignore = ["rosters"]
+    # === Step 2: Flatten deeply nested shared children ===
+    flattened_data = flatten_all(cleaned_data, flatten_targets)
+    with open(final_output_path, "w", encoding="utf-8") as f:
+        json.dump(flattened_data, f, indent=4)
+    print(f"📦 Deep-flattened JSON written to {final_output_path}")
 
-# Nested keys to flatten recursively
-flatten_targets = {
-    "operatives": ["abilities", "weapons", "uniqueactions"],
-    "fireteams": ["operatives"]
-}
-
-# === Load original JSON ===
-with open(input_path, "r", encoding="utf-8") as f:
-    json_data = json.load(f)
-
-# === Step 1: Remove unwanted keys ===
-cleaned_data = remove_keys(json_data, keys_to_ignore)
-with open(intermediate_path, "w", encoding="utf-8") as f:
-    json.dump(cleaned_data, f, indent=4)
-print(f"🧹 Cleaned JSON written to {intermediate_path} (without: {', '.join(keys_to_ignore)})")
-
-# === Step 2: Flatten deeply nested shared children ===
-flattened_data = flatten_all(cleaned_data, flatten_targets)
-with open(final_output_path, "w", encoding="utf-8") as f:
-    json.dump(flattened_data, f, indent=4)
-print(f"📦 Deep-flattened JSON written to {final_output_path}")
